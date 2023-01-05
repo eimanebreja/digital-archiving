@@ -18,6 +18,19 @@ get_header();
                     </div>
 
                     <div class="table">
+
+                        <?php
+$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+query_posts(array(
+    'post_type' => 'item',
+    'post_status' => 'publish',
+    'posts_per_page' => 2,
+    'paged' => $paged,
+));
+$query = new WP_Query($args);
+?>
+
+
                         <div class="table__header">
                             <div class="table__header--browse">
                                 <div class="browse">
@@ -25,7 +38,7 @@ get_header();
                                     <span>More than 1000+ Browse Items</span>
                                 </div>
                                 <div class="button">
-                                    <a href="">Add</a>
+                                    <a href="<?php echo site_url('/add-item'); ?>">Add</a>
                                 </div>
                             </div>
                             <div class="table__header--search">
@@ -50,121 +63,46 @@ get_header();
                                     Action
                                 </div>
                             </div>
+                            <?php if (have_posts()): ?>
+                            <?php while (have_posts()): the_post();?>
                             <div class="table__content--row">
                                 <div class="table__content--body title">
-                                    US Nagasaki bomb off target, historian says
+                                    <?php echo get_field("title") ?>
                                 </div>
                                 <div class="table__content--body creator">
-                                    Lorem ipsum dolor sit amet consectetur.
+                                    <?php echo get_field("creator") ?>
                                 </div>
                                 <div class="table__content--body type">
-                                    Oral History
+                                    <?php echo get_field("type") ?>
                                 </div>
                                 <div class="table__content--body date">
-                                    Oct 15, 2022
+                                    <?php echo get_field("date") ?>
                                 </div>
                                 <div class="table__content--body action">
-                                    <a href="" class="preview">Preview</a>
-                                    <a href="" class="delete">Delete</a>
-                                    <a href="" class="edit">Edit</a>
+                                    <a href="<?php the_permalink();?>" class="preview">Preview</a>
+                                    <a href="<?php echo get_delete_post_link(); ?>" class="delete"
+                                        onclick="return confirm('Are you sure you wanna delete this?')">Delete</a>
+                                    <a href="<?php echo site_url('/edit-item'); ?>?post=<?php the_ID();?>"
+                                        class="edit">Edit</a>
                                 </div>
-                            </div>
-                            <div class="table__content--row">
-                                <div class="table__content--body title">
-                                    US Nagasaki bomb off target, historian says
-                                </div>
-                                <div class="table__content--body creator">
-                                    Lorem ipsum dolor sit amet consectetur.
-                                </div>
-                                <div class="table__content--body type">
-                                    Oral History
-                                </div>
-                                <div class="table__content--body date">
-                                    Oct 15, 2022
-                                </div>
-                                <div class="table__content--body action">
-                                    <a href="" class="preview">Preview</a>
-                                    <a href="" class="delete">Delete</a>
-                                    <a href="" class="edit">Edit</a>
-                                </div>
-                            </div>
-                            <div class="table__content--row">
-                                <div class="table__content--body title">
-                                    US Nagasaki bomb off target, historian says
-                                </div>
-                                <div class="table__content--body creator">
-                                    Lorem ipsum dolor sit amet consectetur.
-                                </div>
-                                <div class="table__content--body type">
-                                    Oral History
-                                </div>
-                                <div class="table__content--body date">
-                                    Oct 15, 2022
-                                </div>
-                                <div class="table__content--body action">
-                                    <a href="" class="preview">Preview</a>
-                                    <a href="" class="delete">Delete</a>
-                                    <a href="" class="edit">Edit</a>
-                                </div>
-                            </div>
-                            <div class="table__content--row">
-                                <div class="table__content--body title">
-                                    US Nagasaki bomb off target, historian says
-                                </div>
-                                <div class="table__content--body creator">
-                                    Lorem ipsum dolor sit amet consectetur.
-                                </div>
-                                <div class="table__content--body type">
-                                    Oral History
-                                </div>
-                                <div class="table__content--body date">
-                                    Oct 15, 2022
-                                </div>
-                                <div class="table__content--body action">
-                                    <a href="" class="preview">Preview</a>
-                                    <a href="" class="delete">Delete</a>
-                                    <a href="" class="edit">Edit</a>
-                                </div>
-                            </div>
-                            <div class="table__content--row">
-                                <div class="table__content--body title">
-                                    US Nagasaki bomb off target, historian says
-                                </div>
-                                <div class="table__content--body creator">
-                                    Lorem ipsum dolor sit amet consectetur.
-                                </div>
-                                <div class="table__content--body type">
-                                    Oral History
-                                </div>
-                                <div class="table__content--body date">
-                                    Oct 15, 2022
-                                </div>
-                                <div class="table__content--body action">
-                                    <a href="" class="preview">Preview</a>
-                                    <a href="" class="delete">Delete</a>
-                                    <a href="" class="edit">Edit</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="table__pagination">
-                            <div class="table__pagination--row">
-                                <a href="" class="item previous">
-                                    <img src="<?php echo THEME_DIR; ?>/assets/img/icon/ic_previous.svg"
-                                        alt="Previous Arrow Icon">
-                                </a>
-                                <a href="" class="item active">1</a>
-                                <a href="" class="item">2</a>
-                                <a href="" class="item">3</a>
-                                <a href="" class="item">4</a>
-                                <a href="" class="item">5</a>
-                                <a href="" class="item">80</a>
-                                <a href="" class="item next">
-                                    <img src="<?php echo THEME_DIR; ?>/assets/img/icon/ic_next.svg"
-                                        alt="Next Arrow Icon">
-                                </a>
                             </div>
 
+                            <?php endwhile;?>
+
+                            <div class="table__pagination">
+                                <div class="table__pagination--row">
+                                    <?php item_pagination();?>
+                                </div>
+                            </div>
+                            <?php else: ?>
+                            <div class="no-result">
+                                <h3>No results found</h3>
+                            </div>
+                            <?php endif;?>
                         </div>
+
+
+
                     </div>
                 </div>
                 <?php require_once "partials/footer.php";?>

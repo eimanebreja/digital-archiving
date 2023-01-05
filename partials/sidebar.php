@@ -26,7 +26,7 @@
                     <p>Dashboard</p>
                 </div>
             </a>
-            <a href="<?php echo site_url('/item'); ?>" class="sidebarmain__list <?php if (is_page('item')) {
+            <a href="<?php echo site_url('/item'); ?>" class="sidebarmain__list <?php if ((is_page(array('item', 'add-item', 'edit-item'))) || (is_single() && 'item' == get_post_type())) {
     echo "activemenu";}?>">
                 <div class="sidebarmain__list--icon">
                     <svg viewBox="0 0 54 43" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -52,7 +52,8 @@
                     <p>Collection <br> Management</p>
                 </div>
             </a>
-            <a href="" class="sidebarmain__list">
+            <a href="<?php echo site_url('/item-type'); ?>" class="sidebarmain__list <?php if (is_page('item-type')) {
+    echo "activemenu";}?>">
                 <div class="sidebarmain__list--icon">
                     <svg viewBox="0 0 59 43" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path

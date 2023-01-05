@@ -334,3 +334,128 @@
     text-align: center;
   }
 }
+
+@media only screen and (min-width: 1200px) and (max-width: 1450px) {
+  .login {
+    &__form {
+      flex-basis: 40%;
+      background-color: $dark;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      &--content {
+        flex-basis: 100%;
+        max-width: 487px;
+        margin: 0 auto;
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+      &--head {
+        gap: 15px;
+        .logo {
+          img {
+            width: 143px;
+          }
+        }
+        .acronymn {
+          h1 {
+            font-size: 26px;
+            line-height: 30px;
+          }
+        }
+      }
+      &--title {
+        padding-top: 20px;
+        h2 {
+          font-size: 24px;
+          line-height: 28px;
+        }
+        p {
+          padding-top: 5px;
+          font-size: 16px;
+        }
+      }
+      &--islogin {
+        text-align: center;
+        padding-top: 30px;
+        .iflogin {
+          transition: 0.3s;
+          text-align: center;
+          font-family: $f-medium;
+          font-size: 18px;
+          color: $white;
+          margin: 0;
+        }
+
+        a {
+          font-size: 16px;
+        }
+      }
+      #loginform {
+        .login-username {
+          padding-top: 15px;
+        }
+        .login-password {
+          padding-top: 15px;
+        }
+        .login-submit {
+          padding-top: 30px;
+
+          .button {
+            font-size: 14px;
+            height: 42px;
+          }
+        }
+        label {
+          font-size: 14px;
+        }
+        .input {
+          height: 60px;
+        }
+      }
+      .login-msg {
+        padding-top: 20px;
+        font-size: 12px;
+      }
+      &--input {
+        padding-top: 5px;
+        input {
+          height: 60px;
+        }
+      }
+      &--btn {
+        padding-top: 40px;
+        max-width: 109px;
+        margin: 0 auto;
+
+        button,
+        .register_btn {
+          font-size: 14px;
+          height: 42px;
+        }
+      }
+      &--google {
+        padding-top: 30px;
+        button {
+          font-size: 14px;
+          height: 50px;
+        }
+      }
+    }
+    &__fv {
+      padding-top: 65px;
+      &--logo {
+        img {
+          width: 270px;
+        }
+        h1 {
+          font-size: 100px;
+          line-height: 45px;
+        }
+      }
+    }
+    &__alreadyaccount {
+      padding-top: 20px;
+    }
+  }
+}

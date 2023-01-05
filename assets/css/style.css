@@ -75,7 +75,7 @@ body {
         width: 18px;
         height: 18px;
         border-radius: 18px;
-        font-size: 14p;
+        font-size: 14px;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -145,6 +145,47 @@ body {
             transition: 0.3s;
             color: #2f78cf; }
 
+@media only screen and (min-width: 1200px) and (max-width: 1450px) {
+  .nav {
+    height: 80px;
+    padding-left: 280px;
+    padding-right: 45px; }
+    .nav__search .search-field {
+      width: 455px;
+      height: 42px;
+      font-size: 14px;
+      padding-left: 10px;
+      padding-right: 10px; }
+    .nav__menu {
+      gap: 20px; }
+      .nav__menu--notif .count-area {
+        top: -7px;
+        width: 15px;
+        height: 15px;
+        font-size: 12px; }
+      .nav__menu--notif .notif-area {
+        width: 32px;
+        height: 32px; }
+        .nav__menu--notif .notif-area img {
+          width: 13px; }
+      .nav__menu--profile {
+        gap: 12px; }
+        .nav__menu--profile::after {
+          position: absolute;
+          content: url(../img/icon/ic_dropdown.svg);
+          top: 15px;
+          right: -20px; }
+        .nav__menu--profile .prof-image img {
+          width: 49px;
+          height: 49px; }
+        .nav__menu--profile .prof-position p {
+          margin: 0; }
+        .nav__menu--profile .prof-position .name {
+          font-size: 14px; }
+        .nav__menu--profile .prof-position .pos {
+          font-size: 14px; }
+        .nav__menu--profile .dropdown-content a {
+          font-size: 14px; } }
 .main-body {
   flex-basis: 80%;
   padding-left: 270px;
@@ -173,7 +214,270 @@ body {
         font-size: 40px;
         color: #ffffff;
         font-family: "Poppins-Bold"; }
+  .main-body__breadcrumb {
+    margin-top: 20px; }
+    .main-body__breadcrumb--list {
+      font-size: 12px;
+      font-family: "Poppins-Regular";
+      color: #b1b1b1; }
+      .main-body__breadcrumb--list a {
+        color: #b1b1b1; }
+        .main-body__breadcrumb--list a:hover {
+          text-decoration: none; }
+  .main-body__area {
+    margin-top: 36px;
+    background-color: #ffffff;
+    padding: 35px 26px 60px;
+    border-radius: 6px; }
+    .main-body__area--row {
+      display: flex;
+      justify-content: space-between;
+      gap: 80px; }
+    .main-body__area--full {
+      flex-basis: 100%;
+      padding-bottom: 50px; }
+    .main-body__area--form {
+      flex-basis: 80%; }
+      .main-body__area--form .item-form-area {
+        padding-top: 50px; }
+        .main-body__area--form .item-form-area .updated p {
+          color: #2f78cf;
+          font-size: 16px;
+          font-family: "Poppins-Medium"; }
+        .main-body__area--form .item-form-area .acf-fields > .acf-field {
+          border-top: none; }
+        .main-body__area--form .item-form-area .add-file {
+          margin-top: 90px;
+          padding-top: 40px;
+          border-top: 1px solid #cccccc !important; }
+          .main-body__area--form .item-form-area .add-file .acf-label {
+            padding-bottom: 20px; }
+            .main-body__area--form .item-form-area .add-file .acf-label label {
+              margin: 0;
+              color: #000000;
+              font-size: 32px;
+              font-family: "Poppins-Bold"; }
+          .main-body__area--form .item-form-area .add-file .acf-input {
+            margin-top: 5px;
+            margin-left: 0%; }
+            .main-body__area--form .item-form-area .add-file .acf-input .acf-file-uploader .hide-if-value p {
+              display: flex;
+              align-items: center;
+              font-size: 14px;
+              color: #464e5f; }
+              .main-body__area--form .item-form-area .add-file .acf-input .acf-file-uploader .hide-if-value p a.acf-button {
+                margin-left: 20px;
+                width: 138px;
+                height: 41px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border: 1px solid #d9d9d9;
+                font-size: 16px;
+                color: #000000;
+                background-color: #f1f2f2;
+                border-radius: 5px;
+                transition: 0.3s; }
+                .main-body__area--form .item-form-area .add-file .acf-input .acf-file-uploader .hide-if-value p a.acf-button:hover {
+                  opacity: 0.7;
+                  transition: 0.3s;
+                  text-decoration: none; }
+          .main-body__area--form .item-form-area .add-file .acf-table .acf-th label {
+            margin: 0;
+            color: #000000;
+            font-size: 18px;
+            font-family: "Poppins-SemiBold";
+            border-bottom: 1px solid #cccccc;
+            display: flex;
+            align-items: center;
+            text-transform: none; }
+          .main-body__area--form .item-form-area .add-file .acf-table .acf-th .description {
+            text-transform: none;
+            font-size: 14px;
+            color: #464e5f;
+            font-family: "Poppins-Medium"; }
+          .main-body__area--form .item-form-area .add-file .acf-actions a.acf-repeater-add-row {
+            margin-top: 20px;
+            width: 189px;
+            height: 41px;
+            float: left;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #d9d9d9;
+            font-size: 16px;
+            color: #000000;
+            background-color: #f1f2f2;
+            border-radius: 5px;
+            transition: 0.3s; }
+            .main-body__area--form .item-form-area .add-file .acf-actions a.acf-repeater-add-row:hover {
+              opacity: 0.7;
+              transition: 0.3s;
+              text-decoration: none; }
+        .main-body__area--form .item-form-area .acf-label {
+          display: flex;
+          align-items: center; }
+          .main-body__area--form .item-form-area .acf-label label {
+            flex-basis: 20%;
+            margin: 0;
+            color: #000000;
+            font-size: 18px;
+            font-family: "Poppins-SemiBold"; }
+          .main-body__area--form .item-form-area .acf-label .description {
+            flex-basis: 80%;
+            margin: 0;
+            color: #464e5f;
+            font-size: 18px;
+            font-family: "Poppins-Regular"; }
+        .main-body__area--form .item-form-area .acf-input {
+          margin-top: 5px;
+          margin-left: 20%; }
+          .main-body__area--form .item-form-area .acf-input input {
+            border: 1px solid #d9d9d9;
+            width: 100%;
+            height: 55px;
+            padding-left: 20px;
+            padding-right: 20px;
+            font-size: 18px;
+            color: #464e5f;
+            border-radius: 5px; }
+          .main-body__area--form .item-form-area .acf-input select {
+            border: 1px solid #d9d9d9;
+            width: 100%;
+            height: 55px;
+            padding-left: 20px;
+            padding-right: 20px;
+            font-size: 18px;
+            color: #464e5f;
+            border-radius: 5px; }
+        .main-body__area--form .item-form-area .acf-form-submit {
+          margin-top: 60px; }
+          .main-body__area--form .item-form-area .acf-form-submit .acf-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 245px;
+            height: 44px;
+            border: 1px solid #3ec562;
+            background: #3ec562;
+            font-size: 20px;
+            font-family: "Poppins-SemiBold";
+            transition: 0.3s;
+            padding: 0px;
+            border-radius: 5px; }
+            .main-body__area--form .item-form-area .acf-form-submit .acf-button:hover {
+              transition: 0.3s;
+              opacity: 0.7; }
+    .main-body__area--title h3 {
+      margin: 0;
+      font-size: 32px;
+      font-family: "Poppins-Bold";
+      color: #212121;
+      line-height: 21px; }
+    .main-body__area--title p {
+      padding-top: 20px;
+      margin: 0;
+      color: #464e5f;
+      font-size: 14px;
+      font-family: "Poppins-Regular"; }
+      .main-body__area--title p a {
+        color: #464e5f;
+        text-decoration: underline; }
+    .main-body__area--collection {
+      flex-basis: 20%; }
 
+@media only screen and (min-width: 1200px) and (max-width: 1450px) {
+  .main-body {
+    padding-left: 230px;
+    padding-top: 100px; }
+    .main-body__container {
+      padding-left: 45px;
+      padding-right: 45px; }
+    .main-body__content--header {
+      height: 158px;
+      padding-left: 40px; }
+      .main-body__content--header .watermark img {
+        height: 168px; }
+      .main-body__content--header h3 {
+        font-size: 34px; }
+    .main-body__breadcrumb {
+      margin-top: 0px; }
+    .main-body__area {
+      margin-top: 26px; }
+      .main-body__area--row {
+        gap: 60px; }
+      .main-body__area--full {
+        padding-bottom: 40px; }
+      .main-body__area--form {
+        flex-basis: 80%; }
+        .main-body__area--form .item-form-area {
+          padding-top: 40px; }
+          .main-body__area--form .item-form-area .add-file {
+            margin-top: 60px;
+            padding-top: 40px; }
+            .main-body__area--form .item-form-area .add-file .acf-label {
+              padding-bottom: 20px; }
+              .main-body__area--form .item-form-area .add-file .acf-label label {
+                font-size: 26px; }
+            .main-body__area--form .item-form-area .add-file .acf-input .acf-file-uploader .hide-if-value p {
+              font-size: 12px; }
+              .main-body__area--form .item-form-area .add-file .acf-input .acf-file-uploader .hide-if-value p a.acf-button {
+                margin-left: 20px;
+                width: 159px;
+                height: 38px;
+                font-size: 12px; }
+            .main-body__area--form .item-form-area .add-file .acf-table .acf-th label {
+              font-size: 16px; }
+            .main-body__area--form .item-form-area .add-file .acf-table .acf-th .description {
+              font-size: 12px; }
+            .main-body__area--form .item-form-area .add-file .acf-actions a.acf-repeater-add-row {
+              margin-top: 15px;
+              width: 179px;
+              height: 38px;
+              font-size: 14px; }
+          .main-body__area--form .item-form-area .acf-label {
+            display: flex;
+            align-items: center; }
+            .main-body__area--form .item-form-area .acf-label label {
+              font-size: 16px; }
+            .main-body__area--form .item-form-area .acf-label .description {
+              font-size: 16px; }
+          .main-body__area--form .item-form-area .acf-input {
+            margin-top: 5px;
+            margin-left: 20%; }
+            .main-body__area--form .item-form-area .acf-input input {
+              height: 50px;
+              padding-left: 15px;
+              padding-right: 15px;
+              font-size: 16px; }
+            .main-body__area--form .item-form-area .acf-input select {
+              height: 50px;
+              padding-left: 15px;
+              padding-right: 15px;
+              font-size: 16px; }
+          .main-body__area--form .item-form-area .acf-form-submit {
+            margin-top: 40px; }
+            .main-body__area--form .item-form-area .acf-form-submit .acf-button {
+              width: 225px;
+              height: 44px;
+              font-size: 18px; }
+      .main-body__area--title h3 {
+        margin: 0;
+        font-size: 32px;
+        font-family: "Poppins-Bold";
+        color: #212121;
+        line-height: 21px; }
+      .main-body__area--title p {
+        padding-top: 20px;
+        margin: 0;
+        color: #464e5f;
+        font-size: 14px;
+        font-family: "Poppins-Regular"; }
+        .main-body__area--title p a {
+          color: #464e5f;
+          text-decoration: underline; }
+      .main-body__area--collection {
+        flex-basis: 20%; } }
 .login__area {
   display: flex;
   justify-content: space-between;
@@ -451,6 +755,88 @@ body {
   line-height: 18px;
   text-align: center; }
 
+@media only screen and (min-width: 1200px) and (max-width: 1450px) {
+  .login__form {
+    flex-basis: 40%;
+    background-color: #161f48;
+    display: flex;
+    align-items: center;
+    justify-content: center; }
+    .login__form--content {
+      flex-basis: 100%;
+      max-width: 487px;
+      margin: 0 auto;
+      padding-left: 20px;
+      padding-right: 20px; }
+    .login__form--head {
+      gap: 15px; }
+      .login__form--head .logo img {
+        width: 143px; }
+      .login__form--head .acronymn h1 {
+        font-size: 26px;
+        line-height: 30px; }
+    .login__form--title {
+      padding-top: 20px; }
+      .login__form--title h2 {
+        font-size: 24px;
+        line-height: 28px; }
+      .login__form--title p {
+        padding-top: 5px;
+        font-size: 16px; }
+    .login__form--islogin {
+      text-align: center;
+      padding-top: 30px; }
+      .login__form--islogin .iflogin {
+        transition: 0.3s;
+        text-align: center;
+        font-family: "Poppins-Medium";
+        font-size: 18px;
+        color: #ffffff;
+        margin: 0; }
+      .login__form--islogin a {
+        font-size: 16px; }
+    .login__form #loginform .login-username {
+      padding-top: 15px; }
+    .login__form #loginform .login-password {
+      padding-top: 15px; }
+    .login__form #loginform .login-submit {
+      padding-top: 30px; }
+      .login__form #loginform .login-submit .button {
+        font-size: 14px;
+        height: 42px; }
+    .login__form #loginform label {
+      font-size: 14px; }
+    .login__form #loginform .input {
+      height: 60px; }
+    .login__form .login-msg {
+      padding-top: 20px;
+      font-size: 12px; }
+    .login__form--input {
+      padding-top: 5px; }
+      .login__form--input input {
+        height: 60px; }
+    .login__form--btn {
+      padding-top: 40px;
+      max-width: 109px;
+      margin: 0 auto; }
+      .login__form--btn button,
+      .login__form--btn .register_btn {
+        font-size: 14px;
+        height: 42px; }
+    .login__form--google {
+      padding-top: 30px; }
+      .login__form--google button {
+        font-size: 14px;
+        height: 50px; }
+  .login__fv {
+    padding-top: 65px; }
+    .login__fv--logo img {
+      width: 270px; }
+    .login__fv--logo h1 {
+      font-size: 100px;
+      line-height: 45px; }
+  .login__alreadyaccount {
+    padding-top: 20px; } }
 .sidebarmain {
   background-color: #234d8d;
   width: 270px;
@@ -519,6 +905,31 @@ body {
         font-family: "Poppins-Medium";
         line-height: 20px; }
 
+@media only screen and (min-width: 1200px) and (max-width: 1450px) {
+  .sidebarmain {
+    width: 250px; }
+    .sidebarmain__area {
+      padding-left: 15px;
+      padding-right: 15px; }
+    .sidebarmain__head {
+      gap: 15px; }
+      .sidebarmain__head--icon img {
+        width: 75px; }
+      .sidebarmain__head--title h1 {
+        font-size: 14px; }
+    .sidebarmain__menu {
+      padding-top: 20px; }
+    .sidebarmain__list {
+      margin-top: 10px;
+      height: 95px;
+      padding-top: 8px; }
+      .sidebarmain__list--icon {
+        padding-top: 10px; }
+        .sidebarmain__list--icon svg {
+          width: 34px; }
+      .sidebarmain__list--text p {
+        font-size: 14px;
+        line-height: 18px; } }
 .dashboard__row {
   padding-top: 34px;
   display: grid;
@@ -646,6 +1057,53 @@ body {
       color: #41475e;
       line-height: 22px; }
 
+@media only screen and (min-width: 1200px) and (max-width: 1450px) {
+  .dashboard__row {
+    padding-top: 24px;
+    gap: 24px; }
+  .dashboard__item {
+    height: 195px;
+    padding: 17px 28px; }
+    .dashboard__item--watermark {
+      position: absolute;
+      right: 0;
+      top: 0;
+      z-index: 1; }
+      .dashboard__item--watermark img {
+        width: 160px; }
+    .dashboard__item--title {
+      font-size: 20px; }
+    .dashboard__item--count {
+      font-size: 76px;
+      line-height: 100px; }
+
+  .component {
+    padding-top: 24px;
+    gap: 24px; }
+    .component__start {
+      padding-top: 60px;
+      padding-left: 40px; }
+      .component__start--title {
+        font-size: 20px; }
+      .component__start--info {
+        padding-top: 20px; }
+        .component__start--info p {
+          font-size: 16px; }
+    .component__notice {
+      padding-left: 30px;
+      padding-right: 30px; }
+      .component__notice--title {
+        font-size: 20px; }
+      .component__notice--content {
+        margin-top: 15px;
+        gap: 15px; }
+      .component__notice--icon {
+        width: 47px;
+        height: 30px; }
+      .component__notice--info {
+        flex-basis: 88%;
+        font-size: 12px;
+        line-height: 18px; } }
 .table {
   margin-top: 36px;
   background-color: #ffffff;
@@ -787,13 +1245,46 @@ body {
             top: 8px;
             left: 17px; }
   .table__pagination {
-    max-width: 320px;
-    margin-left: auto;
+    text-align: right;
     padding-top: 30px; }
     .table__pagination--row {
       display: flex;
       align-items: center;
-      justify-content: center; }
+      justify-content: flex-end; }
+      .table__pagination--row .page-numbers {
+        width: 32px;
+        height: 40px;
+        border-right: 1px solid #2361ce;
+        border-top: 1px solid #2361ce;
+        border-bottom: 1px solid #2361ce;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #676767;
+        font-size: 14px;
+        font-family: "Poppins-Medium";
+        margin: 0; }
+        .table__pagination--row .page-numbers:hover {
+          text-decoration: none; }
+        .table__pagination--row .page-numbers:first-child {
+          border-left: 1px solid #2361ce; }
+        .table__pagination--row .page-numbers.current {
+          background-color: #2361ce;
+          color: #ffffff; }
+        .table__pagination--row .page-numbers.next {
+          height: 32px;
+          border-radius: 100px;
+          margin-left: 20px;
+          background-color: #2361ce;
+          color: #ffffff; }
+        .table__pagination--row .page-numbers.prev {
+          height: 32px;
+          border-radius: 100px;
+          margin-right: 20px;
+          background-color: #2361ce;
+          color: #ffffff; }
+        .table__pagination--row .page-numbers:nth-child(2) {
+          border-left: 1px solid #2361ce; }
       .table__pagination--row .item {
         width: 32px;
         height: 40px;
@@ -830,6 +1321,75 @@ body {
           border-radius: 100px;
           margin-left: 20px;
           background-color: #2361ce; }
+
+@media only screen and (min-width: 1200px) and (max-width: 1450px) {
+  .table {
+    margin-top: 26px; }
+    .table__header--browse .browse {
+      padding-right: 56px; }
+      .table__header--browse .browse p {
+        font-size: 16px;
+        line-height: 18px; }
+      .table__header--browse .browse span {
+        font-size: 10px;
+        line-height: 16px; }
+    .table__header--browse .button {
+      padding-left: 56px; }
+      .table__header--browse .button a {
+        width: 130px;
+        height: 40px;
+        font-size: 16px;
+        line-height: 32px; }
+        .table__header--browse .button a::after {
+          left: 27px;
+          top: 7px;
+          transform: scale(0.8); }
+    .table__header--search input {
+      width: 450px; }
+    .table__content {
+      padding-top: 10px; }
+      .table__content--row {
+        padding-top: 20px;
+        padding-bottom: 20px;
+        gap: 20px; }
+      .table__content .action {
+        display: grid;
+        grid-template-columns: 2fr 2fr 2fr;
+        flex-basis: 25%;
+        gap: 5px; }
+        .table__content .action a {
+          width: 90px;
+          height: 30px;
+          font-size: 12px; }
+          .table__content .action a.preview::after {
+            transform: scale(0.8);
+            top: 7px; }
+          .table__content .action a.delete::after {
+            transform: scale(0.8);
+            top: 7px; }
+          .table__content .action a.edit::after {
+            transform: scale(0.8);
+            top: 6px; } }
+.single-area {
+  padding-top: 30px; }
+  .single-area__row {
+    display: flex;
+    padding-top: 20px;
+    border-bottom: 1px solid #d9d9d9; }
+    .single-area__row--label {
+      color: #000000;
+      font-size: 18px;
+      font-family: "Poppins-SemiBold";
+      flex-basis: 20%;
+      padding-bottom: 20px; }
+    .single-area__row--info {
+      padding-bottom: 20px;
+      flex-basis: 80%;
+      font-size: 18px;
+      color: #464e5f;
+      border-radius: 5px; }
+      .single-area__row--info .document-menu .document-list a {
+        color: #2f78cf; }
 
 .ftr-area {
   margin-top: 55px;

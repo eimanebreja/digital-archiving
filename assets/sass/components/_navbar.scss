@@ -1,5 +1,4 @@
 .nav {
-  //   margin-left: 270px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -46,7 +45,7 @@
         width: 18px;
         height: 18px;
         border-radius: 18px;
-        font-size: 14p;
+        font-size: 14px;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -131,6 +130,74 @@
           &:hover {
             transition: 0.3s;
             color: $blue;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 1200px) and (max-width: 1450px) {
+  .nav {
+    height: 80px;
+    padding-left: 280px;
+    padding-right: 45px;
+    &__search {
+      .search-field {
+        width: 455px;
+        height: 42px;
+        font-size: 14px;
+        padding-left: 10px;
+        padding-right: 10px;
+      }
+    }
+    &__menu {
+      gap: 20px;
+      &--notif {
+        .count-area {
+          top: -7px;
+          width: 15px;
+          height: 15px;
+          font-size: 12px;
+        }
+        .notif-area {
+          width: 32px;
+          height: 32px;
+          img {
+            width: 13px;
+          }
+        }
+      }
+      &--profile {
+        gap: 12px;
+        &::after {
+          position: absolute;
+          content: url(../img/icon/ic_dropdown.svg);
+          top: 15px;
+          right: -20px;
+        }
+
+        .prof-image {
+          img {
+            width: 49px;
+            height: 49px;
+          }
+        }
+        .prof-position {
+          p {
+            margin: 0;
+          }
+          .name {
+            font-size: 14px;
+          }
+          .pos {
+            font-size: 14px;
+          }
+        }
+
+        .dropdown-content {
+          a {
+            font-size: 14px;
           }
         }
       }
