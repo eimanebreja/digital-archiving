@@ -58,24 +58,96 @@ function get_breadcrumb()
     }
 }
 
-if (!function_exists('item_pagination')):
-    function item_pagination()
-{
-        global $wp_query;
+/* Create Library Admin User Role */
+add_role(
+    'Admin library', //  System name of the role.
+    __('Library Admin'), // Display name of the role.
+    array(
+        'read' => true,
+        'create_posts' => true,
+        'delete_posts' => true,
+        'delete_published_posts' => true,
+        'edit_posts' => true,
+        'publish_posts' => true,
+        'edit_published_posts' => true,
+        'upload_files' => true,
+        'moderate_comments' => true,
+        'activate_plugins' => true,
+        'delete_others_pages' => true,
+        'delete_others_posts' => true,
+        'delete_pages' => true,
+        'delete_private_pages' => true,
+        'delete_private_posts' => true,
+        'delete_published_pages' => true,
+        'edit_dashboard' => true,
+        'edit_others_pages' => true,
+        'edit_others_posts' => true,
+        'edit_pages' => true,
+        'edit_private_pages' => true,
+        'edit_private_posts' => true,
+        'edit_published_pages' => true,
+        'edit_published_posts' => true,
+        'edit_theme_options' => true,
+        'list_users' => true,
+        'manage_links' => true,
+        'manage_options' => true,
+        'promote_users' => true,
+        'publish_pages' => true,
+        'read_private_pages' => true,
+        'read_private_posts' => true,
+        'remove_users' => true,
+        'switch_themes' => true,
+        'customize' => true,
+        'delete_site' => true,
+    )
+);
 
-        $big = 999999999; // need an unlikely integer
+/* Create Library Admin User Role */
+add_role(
+    'Admin Archiving', //  System name of the role.
+    __('Archiving Admin'), // Display name of the role.
+    array(
+        'read' => true,
+        'create_posts' => true,
+        'delete_posts' => true,
+        'delete_published_posts' => true,
+        'edit_posts' => true,
+        'publish_posts' => true,
+        'edit_published_posts' => true,
+        'upload_files' => true,
+        'moderate_comments' => true,
+        'activate_plugins' => true,
+        'delete_others_pages' => true,
+        'delete_others_posts' => true,
+        'delete_pages' => true,
+        'delete_private_pages' => true,
+        'delete_private_posts' => true,
+        'delete_published_pages' => true,
+        'edit_dashboard' => true,
+        'edit_others_pages' => true,
+        'edit_others_posts' => true,
+        'edit_pages' => true,
+        'edit_private_pages' => true,
+        'edit_private_posts' => true,
+        'edit_published_pages' => true,
+        'edit_published_posts' => true,
+        'edit_theme_options' => true,
+        'list_users' => true,
+        'manage_links' => true,
+        'manage_options' => true,
+        'promote_users' => true,
+        'publish_pages' => true,
+        'read_private_pages' => true,
+        'read_private_posts' => true,
+        'remove_users' => true,
+        'switch_themes' => true,
+        'customize' => true,
+        'delete_site' => true,
+    )
+);
 
-        echo paginate_links(array(
-            'base' => str_replace($big, '%#%', esc_url(get_pagenum_link($big))),
-            'format' => '?paged=%#%',
-            'prev_text' => __('<'),
-            'next_text' => __('>'),
-            'current' => max(1, get_query_var('paged')),
-            'total' => $wp_query->max_num_pages,
-        ));
-    }
-endif;
-
-require_once "includes/function-login.php";
-require_once "includes/function-item-custompost.php";
-require_once "includes/function-item-type-custompost.php";
+require_once "archiving/includes/function-login.php";
+require_once "archiving/includes/function-item-custompost.php";
+require_once "archiving/includes/function-item-type-custompost.php";
+require_once "archiving/includes/function-collection-custompost.php";
+require_once "archiving/includes/function-subcollection-custompost.php";

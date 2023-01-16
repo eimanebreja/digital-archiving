@@ -31,7 +31,13 @@ body {
 @import "components/dashboard";
 @import "components/table";
 @import "components/single";
+@import "components/rarematerials";
+@import "components/tab";
 @import "components/footer";
+
+.hidden {
+  display: none;
+}
 
 @media screen and (max-width: 785px) {
   .pc {

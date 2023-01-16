@@ -160,6 +160,15 @@ while (have_posts()) {
 
                                         <div class="single-area__row">
                                             <div class="single-area__row--label">
+                                                Collection
+                                            </div>
+                                            <div class="single-area__row--info">
+                                                <?php the_field('collection');?>
+                                            </div>
+                                        </div>
+
+                                        <div class="single-area__row">
+                                            <div class="single-area__row--label">
                                                 Files
                                             </div>
                                             <div class="single-area__row--info">

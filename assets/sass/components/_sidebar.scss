@@ -3,8 +3,10 @@
   width: 270px;
   flex-basis: 20%;
   position: fixed;
+  overflow: auto;
   height: 100vh;
   z-index: 101;
+  padding-bottom: 20px;
 
   &__area {
     padding-top: 14px;
@@ -15,6 +17,7 @@
     display: flex;
     align-items: center;
     gap: 15px;
+    padding-bottom: 20px;
     &--icon {
       img {
         display: block;
@@ -35,7 +38,10 @@
     }
   }
   &__menu {
-    padding-top: 30px;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    // overflow: auto;
+    // height: 900px;
   }
   &__list {
     margin-top: 10px;
@@ -117,7 +123,9 @@
       }
     }
     &__menu {
-      padding-top: 20px;
+      padding-top: 10px;
+      padding-bottom: 20px;
+      // height: 900px;
     }
     &__list {
       margin-top: 10px;

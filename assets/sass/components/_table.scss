@@ -7,6 +7,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding-bottom: 30px;
     &--browse {
       display: flex;
       align-items: center;
@@ -78,6 +79,50 @@
           color: #b5b5c3;
         }
       }
+
+      .search_bar {
+        position: relative;
+
+        .search_result {
+          position: absolute;
+          top: 40px;
+          left: 0;
+          right: 0;
+          display: none;
+          background-color: $white;
+          z-index: 10;
+          border-radius: 8px;
+
+          ul {
+            list-style: none;
+            border-left: 1px solid #f3f6f9;
+            border-right: 1px solid #f3f6f9;
+            border-bottom: 1px solid #f3f6f9;
+            padding: 0;
+            margin: 0;
+
+            li {
+              border-bottom: 1px solid #f3f6f9;
+              padding: 10px 20px;
+              transition: 0.3s;
+              &:hover {
+                transition: 0.3s;
+                background-color: #f3f6f9;
+              }
+              a {
+                font-size: 13px;
+                margin: 0;
+                color: $blue;
+                transition: 0.3s;
+                &:hover {
+                  transition: 0.3s;
+                  text-decoration: none;
+                }
+              }
+            }
+          }
+        }
+      }
     }
   }
   &__content {
@@ -102,11 +147,113 @@
       font-family: $f-semibold;
       line-height: 18px;
     }
+
+    .dataTables_filter {
+      input {
+        width: 472px;
+        height: 40px;
+        background-color: #f3f6f9;
+        border: 1px solid #f3f6f9;
+        border-radius: 8px;
+        font-size: 13px;
+        color: $black;
+        font-family: $f-regular;
+        padding-left: 15px;
+        padding-right: 15px;
+        &::placeholder {
+          color: #b5b5c3;
+        }
+      }
+    }
+
+    table {
+      th {
+        font-size: 12px;
+        color: #b5b5c3;
+        font-family: $f-semibold;
+        text-transform: none;
+        padding-top: 20px !important;
+        padding-bottom: 20px !important;
+      }
+
+      td {
+        font-size: 14px;
+        color: #464e5f;
+        font-family: $f-semibold;
+        line-height: 18px;
+        padding-top: 20px !important;
+        padding-bottom: 20px !important;
+        &.actions {
+          width: 20%;
+        }
+      }
+    }
+    .dataTables_paginate {
+      padding-top: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      .previous {
+        height: 32px !important;
+        border-radius: 100px;
+        margin-right: 15px !important;
+        background-color: #2361ce !important;
+        color: $white !important;
+        border-left: 1px solid #2361ce !important;
+        border-radius: 100px !important;
+      }
+      span {
+        display: flex;
+      }
+      .paginate_button {
+        &.disabled {
+          color: $white !important;
+          background-color: #2361ce !important;
+          &:hover {
+            color: $white !important;
+          }
+        }
+        &.current {
+          background-color: #2361ce !important;
+          color: $white !important;
+        }
+        width: 32px;
+        height: 40px;
+        border-right: 1px solid #2361ce !important;
+        border-top: 1px solid #2361ce !important;
+        border-bottom: 1px solid #2361ce !important;
+        border-left: 1px solid #2361ce;
+        background-color: $white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #676767;
+        font-size: 14px;
+        font-family: $f-medium;
+        border-radius: 0px;
+        margin: 0;
+        &:hover {
+          text-decoration: none;
+        }
+      }
+
+      .next {
+        border-left: 1px solid #2361ce !important;
+        height: 32px !important;
+        border-radius: 100px;
+        margin-left: 15px;
+        background-color: #2361ce;
+        color: $white !important;
+      }
+    }
     .title {
       flex-basis: 20%;
     }
     .creator {
       flex-basis: 25%;
+    }
+    .description {
+      flex-basis: 40%;
     }
     .type {
       flex-basis: 15%;

@@ -26,33 +26,6 @@ get_header();
                         <p>Or Create <a href="<?php echo site_url('/register'); ?>">an Account</a>
                         </p>
                     </div>
-                    <!-- <form action="">
-                        <div class="login__form--group">
-                            <div class="login__form--label">
-                                Email
-                            </div>
-                            <div class="login__form--input">
-                                <input type="email">
-                            </div>
-                        </div>
-                        <div class="login__form--group">
-                            <div class="login__form--label">
-                                <span> Password</span>
-                                <span><a href="">Forgot Password?</a></span>
-                            </div>
-                            <div class="login__form--input">
-                                <input type="password">
-                            </div>
-                        </div>
-                        <div class="login__form--btn">
-                            <button>Sign In</button>
-                        </div>
-                        <div class="login__form--google">
-                            <button>
-                                Or Sign in with Google
-                            </button>
-                        </div>
-                    </form> -->
                     <?php
 if (!is_user_logged_in()) { // Display WordPress login form:
     $args = array(
@@ -99,10 +72,6 @@ if ($login === "failed") {
 
             </div>
             <div class="login__fv">
-                <div class="login__fv--logo">
-                    <img src="<?php echo THEME_DIR; ?>/assets/img/ppmc_logo.png" alt="NHCP Logo">
-                    <h1>NHCP</h1>
-                </div>
                 <div class="login__fv--img">
                     <img src="<?php echo THEME_DIR; ?>/assets/img/fv_banner.png" alt="NHCP Logo Banner">
                 </div>

@@ -19,12 +19,15 @@ get_header();
                         <div class="main-body__area--row">
                             <div class="main-body__area--form">
                                 <div class="main-body__area--title">
-                                    <h3>Dublin Core</h3>
-                                    <p>The Dublin Core metadata element set is common to all Omeka records, including
-                                        items, files, and collections. For more information see,
-                                        <a
-                                            href="http://dublincore.org/documents/dces/">http://dublincore.org/documents/dces/</a>.
-                                    </p>
+                                    <div class="title">
+                                        <h3>Dublin Core</h3>
+                                        <p>The Dublin Core metadata element set is common to all Omeka records,
+                                            including
+                                            items, files, and collections. For more information see,
+                                            <a
+                                                href="http://dublincore.org/documents/dces/">http://dublincore.org/documents/dces/</a>.
+                                        </p>
+                                    </div>
                                 </div>
                                 <div class="item-form-area">
                                     <?php

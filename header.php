@@ -18,6 +18,9 @@
     <!--[if lt IE 9]>
 	<script src="<?php echo esc_url(get_template_directory_uri()); ?>/js/html5.js?ver=3.7.0"></script>
 	<![endif]-->
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.1/css/jquery.dataTables.css">
+
     <?php wp_head();?>
 </head>
 
