@@ -31,6 +31,18 @@ get_header();
                                 </div>
                                 <div class="item-form-area">
 
+
+                                    <?php if (isset($_GET['updated'])) {?>
+                                    <div class="add-scollection">
+
+                                        <p>
+                                            Click <a
+                                                href="<?php echo site_url('/add-sub-collection'); ?>?postid=240 ">here</a>
+                                            if you want to add Sub - Collection.
+                                        </p>
+                                    </div>
+
+                                    <?php } else {?>
                                     <?php
 acf_form(array(
     'post_id' => 'new_post',
@@ -41,11 +53,13 @@ acf_form(array(
         'post_type' => 'collection',
         'post_status' => 'publish',
     ),
-    'submit_value' => 'Add Sub Collection',
+    'submit_value' => 'Add Collection',
     // 'return' => add_query_arg('updated', 'true', site_url('add-sub-collection') . '?postid=' . $_POST['post_id']),
 
 ));
-?>
+    ?>
+
+                                    <?php }?>
 
                                 </div>
                             </div>

@@ -30,7 +30,8 @@ get_header();
                                     </div>
                                 </div>
                                 <div class="item-form-area">
-                                    <?php
+                                    <form id="post" class="acf-form" action="" method="post">
+                                        <?php
 $date = date('M-d-Y');
 $random = time() . rand(10 * 45, 100 * 98);
 acf_form(array(
@@ -45,11 +46,31 @@ acf_form(array(
         'post_title' => 'Item No. ' . $random . ' ',
     ),
     'submit_value' => 'Add Item',
+    'form' => false,
 ));
 ?>
+                                        <div class="variants">
+                                            <div class="acf-field acf-field-post-object old-select-variant">
+                                                <div class="acf-label">
+                                                    <label>Sub Collections</label>
+                                                </div>
+                                                <div class="acf-input">
+                                                    <select id="variants" class="placeholderVariants">
+                                                        <option disabled selected>Select</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
 
+                                        <div class="acf-form-submit">
+                                            <input type="submit" class="acf-button button button-primary button-large"
+                                                value="Submit">
+                                            <span class="acf-spinner"></span>
+                                        </div>
 
+                                    </form>
                                 </div>
+
                             </div>
                             <div class="main-body__area--collection">
 
@@ -62,5 +83,43 @@ acf_form(array(
         </div>
     </div>
 </section>
+
+<script>
+jQuery(function($) {
+    $('#acf-field_63bd13eaa6ebc').on('change', function() {
+        var po_select = $(this).val();
+        $.ajax({
+            type: 'POST',
+            url: '<?php echo admin_url('admin-ajax.php'); ?>',
+            dataType: "html", // add data type
+            data: {
+                action: 'get_ajax_posts',
+                data: po_select
+            },
+            success: function(response) {
+                $('.variants').html(response);
+                var value = $("#variants").val();
+                $('#acf-field_63ca00f3c194a').val(value);
+
+                // $( '.variants' ).addClass('front');
+                $(".old-select-variant").remove();
+            }
+        });
+    });
+    $(document).on('change', '#variants', function() {
+        var value = $("#variants").val();
+        $('#acf-field_63ca00f3c194a').val(value);
+    });
+});
+</script>
+<style>
+#variants {
+    margin-left: 10px;
+}
+
+.frontendhidden {
+    display: none;
+}
+</style>
 
 <?php get_footer();?>

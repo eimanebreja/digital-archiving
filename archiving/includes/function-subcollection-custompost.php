@@ -17,6 +17,7 @@ function subcollection_custom_post_type()
                 'title', 'thumbnail', 'editor', 'excerpt', 'comments',
             ),
             'taxonomies' => array('post_tag'),
+            'show_in_menu' => 'archiving',
         )
     );
 }

@@ -31,7 +31,7 @@
 
             <?php
 global $user_login, $current_user;
-get_currentuserinfo();
+wp_get_current_user();
 $user_info = get_userdata($current_user->ID);
 $library_roles = array(
     'administrator',
@@ -44,7 +44,7 @@ $archiving_roles = array(
 
 if (is_user_logged_in() && array_intersect($library_roles, $user_info->roles)) {?>
             <!-- Digital Library Menu -->
-            <a href="<?php echo site_url('/cataloging'); ?>" class="sidebarmain__list <?php if (is_page('cataloging')) {
+            <a href="<?php echo site_url('/cataloging'); ?>" class="sidebarmain__list  <?php if ((is_page(array('cataloging', 'add-audio-visuals', 'edit-audio-visuals', 'add-books-and-manuscript', 'add-academic-courseworks', 'add-audio-recordings', 'edit-books-and-manuscript', 'edit-academic-courseworks', 'edit-audio-recordings'))) || (is_single() && 'audio-visual' == get_post_type()) || (is_single() && 'books-manuscript' == get_post_type()) || (is_single() && 'academic-courseworks' == get_post_type()) || (is_single() && 'audio-recordings' == get_post_type())) {
     echo "activemenu";}?>">
                 <div class="sidebarmain__list--icon">
                     <svg viewBox="0 0 37 49" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -58,7 +58,7 @@ if (is_user_logged_in() && array_intersect($library_roles, $user_info->roles)) {
                 </div>
             </a>
 
-            <a href="<?php echo site_url('/indexing'); ?>" class="sidebarmain__list <?php if (is_page('indexing')) {
+            <a href="<?php echo site_url('/indexing'); ?>" class="sidebarmain__list <?php if ((is_page(array('indexing', 'add-analytic-and-book-literature', 'edit-analytic-and-book-literature', 'add-periodical-article', 'edit-periodical-article', 'add-vertical-file', 'edit-vertical-file', 'add-cases', 'edit-cases'))) || (is_single() && 'cases' == get_post_type()) || (is_single() && 'vertical-file' == get_post_type()) || (is_single() && 'periodical-article' == get_post_type()) || (is_single() && 'analytic-literature' == get_post_type())) {
     echo "activemenu";}?>">
                 <div class="sidebarmain__list--icon">
                     <svg viewBox="0 0 48 43" fill="none" xmlns="http://www.w3.org/2000/svg">

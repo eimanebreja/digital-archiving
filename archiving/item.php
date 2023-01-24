@@ -32,13 +32,13 @@ get_header();
                         <div class="table__content">
                             <?php
 $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
-query_posts(array(
+$arg_item = array(
     'post_type' => 'item',
     'post_status' => 'publish',
     'posts_per_page' => -1,
     'paged' => $paged,
-));
-$query = new WP_Query($args);
+);
+$arg_query = new WP_Query($arg_item);
 ?>
                             <table id="table_item" class="display">
                                 <thead>
@@ -50,10 +50,11 @@ $query = new WP_Query($args);
                                         <th> Action</th>
                                     </tr>
                                 </thead>
-                                <?php if (have_posts()): ?>
+                                <?php if ($arg_query->have_posts()) {?>
 
                                 <tbody>
-                                    <?php while (have_posts()): the_post();?>
+                                    <?php while ($arg_query->have_posts()) {
+    $arg_query->the_post();?>
                                     <tr>
                                         <td> <?php echo get_field("title") ?></td>
                                         <td> <?php echo get_field("creator") ?></td>
@@ -75,9 +76,16 @@ $query = new WP_Query($args);
                                     </tr>
 
 
-                                    <?php endwhile;?>
+                                    <?php
+
+}
+    ?>
                                 </tbody>
-                                <?php endif;?>
+
+                                <?php
+
+}
+?>
                             </table>
                         </div>
                     </div>

@@ -21,6 +21,7 @@ function item_type_custom_post_type()
                 'title', 'thumbnail', 'editor', 'excerpt', 'comments',
             ),
             'taxonomies' => array('category'),
+            'show_in_menu' => 'archiving',
         )
     );
 }

@@ -140,7 +140,9 @@
 
           img {
             width: 70px;
-            height: auto;
+            height: 71px;
+            object-fit: cover;
+            object-position: top;
             display: block;
           }
           &--icon {
@@ -155,6 +157,7 @@
 
             img {
               width: 35px;
+              height: auto;
               display: block;
             }
           }

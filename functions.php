@@ -32,6 +32,21 @@ function enqueue_styles()
 }
 add_action('wp_enqueue_scripts', 'enqueue_styles');
 
+add_action('wp_enqueue_scripts', 'add_my_script');
+function add_my_script()
+{
+    wp_enqueue_script('jquery_min_script', 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js');
+    wp_enqueue_script('datatable_script', 'https://cdn.datatables.net/1.13.1/js/jquery.dataTables.js');
+    // wp_enqueue_script('jquery'); // Explicitly telling wordpress to load jquery
+    wp_enqueue_script(
+        'your-script',
+        get_stylesheet_directory_uri() . '/assets/js/app.js',
+        array('jquery'),
+        1.5, // put the version of your script here
+        true// This will make sure that your script will be loaded in the footer
+    );
+}
+
 /**
  * Generate breadcrumbs
  * @author CodexWorld
@@ -146,8 +161,68 @@ add_role(
     )
 );
 
+//*********************** AJAX POSTS **********************//
+function get_ajax_posts()
+{
+    // Query Arguments
+    $post_id = $_POST['data'];
+
+    $args = array(
+        'post_type' => 'sub-collection',
+        'posts_per_page' => -1,
+        'meta_query' => array(
+            'relation' => 'AND',
+            array(
+                'key' => 'collection',
+                'value' => $post_id,
+                'compare' => '=',
+            ),
+            // array(
+            //     'key' => 'sub_collection',
+            //     'value' => $post_id,
+            //     'compare' => '=',
+            // ),
+        ));
+
+    // The Query
+    $ajaxposts = new WP_Query($args);
+
+    $variants = '';
+
+    // The Query
+    if ($ajaxposts->have_posts()) {
+        ?>
+<div class="acf-field acf-field-post-object">
+    <div class="acf-label">
+        <label>Sub Collections</label>
+    </div>
+    <div class="acf-input">
+        <select id="variants">
+            <?php
+while ($ajaxposts->have_posts()) {
+            $ajaxposts->the_post();?>
+            <option value="<?php echo get_the_ID(); ?>"><?php echo get_the_title(get_the_ID()); ?></option>
+            <?php }?>
+        </select>
+    </div>
+</div>
+<?php
+} else {
+        $variants = "dont work";
+        echo $variants;
+    }
+
+    exit; // leave ajax call
+}
+// Fire AJAX action for both logged in and non-logged in users
+add_action('wp_ajax_get_ajax_posts', 'get_ajax_posts');
+add_action('wp_ajax_nopriv_get_ajax_posts', 'get_ajax_posts');
+
 require_once "archiving/includes/function-login.php";
 require_once "archiving/includes/function-item-custompost.php";
 require_once "archiving/includes/function-item-type-custompost.php";
 require_once "archiving/includes/function-collection-custompost.php";
 require_once "archiving/includes/function-subcollection-custompost.php";
+require_once "library/functions/catalog-function.php";
+require_once "library/functions/indexing-function.php";
+require_once "library/functions/rare-materials-function.php";

@@ -17,6 +17,7 @@ function collection_custom_post_type()
                 'title', 'thumbnail', 'editor', 'excerpt', 'comments',
             ),
             'taxonomies' => array('category'),
+            'show_in_menu' => 'archiving',
         )
     );
 }
@@ -61,7 +62,7 @@ endif;
 
 // }
 
-add_action('acf/save_post', 'my_acf_redirect_after_save', 99);
+// add_action('acf/save_post', 'my_acf_redirect_after_save', 99);
 
 /**
  * Disabled  Collection Field
@@ -88,3 +89,23 @@ function sub_collection_name_acf_prepare_field($field)
 }
 
 add_filter('acf/prepare_field/name=sub_collection', 'sub_collection_name_acf_prepare_field');
+
+// function my_acf_redirect_after_save($post_id)
+// {
+
+//     // Only do it for "custom_post" post type
+//     if (get_post_type($post_id) != 'collection') {
+//         return;
+//     }
+
+//     // Only do it on the front end
+//     if (is_admin()) {
+//         return;
+//     }
+
+//     wp_redirect('https://example.com/thank/you/page/?postid=' . $post_id);
+
+// }
+
+// // run after ACF saves the $_POST['acf'] data
+// add_action('acf/save_post', 'my_acf_redirect_after_save', 99);

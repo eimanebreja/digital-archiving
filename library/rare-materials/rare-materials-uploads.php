@@ -1,97 +1,33 @@
 <div class="tab__content">
-    <div class="tab__content--header">
-        <h3>Upload Electronic Files</h3>
-    </div>
+    <div class="catalog">
+        <div class="catalog__add">
 
-    <div class="rare">
-        <div class="rare__form">
-            <form action="">
-                <div class="rare__group">
-                    <div class="rare__label">
-                        Group
-                    </div>
-                    <div class="rare__input">
-                        <select name="" id="">
-                            <option value="">Books</option>
-                            <option value="">Books</option>
-                            <option value="">Books</option>
-                            <option value="">Books</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="rare__group--row">
-                    <div class="rare__group--base">
-                        <div class="rare__group">
-                            <div class="rare__label">
-                                File1 to upload 1
-                            </div>
-                            <div class="rare__input">
-                                <input type="file" name="" id="">
-                            </div>
-                        </div>
-                        <div class="rare__group">
-                            <div class="rare__label">
-                                File1 to upload 2
-                            </div>
-                            <div class="rare__input">
-                                <input type="file" name="" id="">
-                            </div>
-                        </div>
-                        <div class="rare__group">
-                            <div class="rare__label">
-                                File1 to upload 3
-                            </div>
-                            <div class="rare__input">
-                                <input type="file" name="" id="">
-                            </div>
-                        </div>
-                        <div class="rare__group">
-                            <div class="rare__label">
-                                File1 to upload 4
-                            </div>
-                            <div class="rare__input">
-                                <input type="file" name="" id="">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="rare__group--base">
-                        <div class="rare__group">
-                            <div class="rare__label">
-                                File1 to upload 5
-                            </div>
-                            <div class="rare__input">
-                                <input type="file" name="" id="">
-                            </div>
-                        </div>
-                        <div class="rare__group">
-                            <div class="rare__label">
-                                File1 to upload 6
-                            </div>
-                            <div class="rare__input">
-                                <input type="file" name="" id="">
-                            </div>
-                        </div>
-                        <div class="rare__group">
-                            <div class="rare__label">
-                                File1 to upload 7
-                            </div>
-                            <div class="rare__input">
-                                <input type="file" name="" id="">
-                            </div>
-                        </div>
-                        <div class="rare__group">
-                            <div class="rare__label">
-                                File1 to upload 8
-                            </div>
-                            <div class="rare__input">
-                                <input type="file" name="" id="">
-                            </div>
-                        </div>
-                    </div>
+            <div class="catalog__add--title">
+                <h3>
+                    Upload Electronic Files
+                </h3>
+            </div>
+            <div class="catalog__add--content">
+                <?php
+$random = time() . rand(10 * 45, 100 * 98);
+acf_form(array(
+    'post_id' => 'new_post',
+    'post_title' => false,
+    'post_content' => false,
+    'field_groups' => array(
+        'group_63cf729b65b5b',
+    ),
+    'updated_message' => __("New File is successfully submitted.", 'acf'),
+    'new_post' => array(
+        'post_type' => 'uploads',
+        'post_status' => 'publish',
+        'post_title' => 'File Upload No. ' . $random . ' ',
+    ),
+    'submit_value' => 'Submit',
+));
+?>
 
-                </div>
-            </form>
-
+            </div>
         </div>
     </div>
 </div>

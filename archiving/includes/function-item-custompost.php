@@ -1,4 +1,20 @@
 <?php
+
+function archiving_admin_menu()
+{
+    add_menu_page(
+        'Archiving',
+        'Archiving',
+        'read',
+        'archiving',
+        '', // Callback, leave empty
+        'dashicons-admin-post',
+        5// Position
+    );
+}
+
+add_action('admin_menu', 'archiving_admin_menu');
+
 function item_custom_post_type()
 {
     register_post_type('item',
@@ -17,6 +33,7 @@ function item_custom_post_type()
                 'title', 'thumbnail', 'editor', 'excerpt', 'comments',
             ),
             'taxonomies' => array('category'),
+            'show_in_menu' => 'archiving',
         )
     );
 }
@@ -26,10 +43,10 @@ add_action('init', 'item_custom_post_type');
  * Populate Select Field to a post Type
  */
 
-function acf_load_sample_field($field)
+function acf_load_sample_field($field_item_type)
 {
-    $field['choices'] = get_post_type_values('item_type');
-    return $field;
+    $field_item_type['choices'] = get_post_type_values('item_type');
+    return $field_item_type;
 }
 add_filter('acf/load_field/name=type', 'acf_load_sample_field');
 
@@ -65,7 +82,7 @@ add_filter('acf/load_field/name=collection', 'acf_load_collection_field');
 
 function get_collection_post_type_values($post_type)
 {
-    $values = array();
+    $values_collection = array();
     $defaults = array(
         'post_type' => $post_type,
         'post_status' => 'publish',
@@ -76,10 +93,10 @@ function get_collection_post_type_values($post_type)
     $query = new WP_Query($defaults);
     if ($query->found_posts > 0) {
         foreach ($query->posts as $post) {
-            $values[get_the_title($post->ID)] = get_the_title($post->ID);
+            $values_collection[get_the_title($post->ID)] = get_the_title($post->ID);
         }
     }
-    return $values;
+    return $values_collection;
 }
 
 /**
@@ -105,35 +122,33 @@ if (!function_exists('item_pagination')):
 endif;
 
 /**
- * Populate Select Field to a Sub Collection
+ * Populate Select Field to a post Sub Collection
  */
 
-function acf_load_sub_collection_field($field)
+function acf_load_sub_collection_field($field_subcollection)
 {
-    $field['choices'] = get_sub_collection_post_type_values('sub-collection');
-    return $field;
-
+    $field_subcollection['choices'] = get_subcollection_post_type_values('sub-collection');
+    return $field_subcollection;
 }
-//fields na mapapalitan ang value
 add_filter('acf/load_field/name=item_sub_collection', 'acf_load_sub_collection_field');
 
-function get_sub_collection_post_type_values($sub_collection_post_type)
+function get_subcollection_post_type_values($post_type_subcollection)
 {
-    $values = array();
-    $defaults = array(
-        'post_type' => $sub_collection_post_type,
+    $values_subcollection = array();
+    $defaults_subcollection = array(
+        'post_type' => $post_type_subcollection,
         'post_status' => 'publish',
         'posts_per_page' => -1,
         'orderby' => 'title',
         'order' => 'ASC',
     );
-    $query = new WP_Query($defaults);
-    if ($query->found_posts > 0) {
-        foreach ($query->posts as $post) {
-            $values[get_the_title($post->ID)] = get_the_title($post->ID);
+    $query_subcollection = new WP_Query($defaults_subcollection);
+    if ($query_subcollection->found_posts > 0) {
+        foreach ($query_subcollection->posts as $post) {
+            $values_subcollection[get_the_title($post->ID)] = get_the_title($post->ID);
+
         }
     }
-    return $values;
+    return $values_subcollection;
+    // return $values_subcollectionid;
 }
-
-wp_register_script('acf_load_sub_collection_field', $url, array('acf-input'));

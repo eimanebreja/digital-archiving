@@ -1,5 +1,6 @@
 <?php
 /*** Template Name: Rare Material */
+acf_form_head();
 get_header();
 ?>
 
@@ -52,78 +53,5 @@ get_header();
         </div>
     </div>
 </section>
-
-
-
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.js"></script>
-<script>
-function openTab(evt, tabName) {
-    var i, tabcontent, tablinks;
-    tabcontent = document.getElementsByClassName("tabcontent");
-    for (i = 0; i < tabcontent.length; i++) {
-        tabcontent[i].style.display = "none";
-    }
-    tablinks = document.getElementsByClassName("tablinks");
-    for (i = 0; i < tablinks.length; i++) {
-        tablinks[i].className = tablinks[i].className.replace(" active", "");
-    }
-    document.getElementById(tabName).style.display = "block";
-    evt.currentTarget.className += " active";
-}
-</script>
-
-<script type='text/javascript'>
-$(document).ready(function() {
-    // $('#table_item_type').DataTable();
-    $('#table_archives').dataTable({
-        language: {
-            searchPlaceholder: "Search Archives Title",
-            search: "",
-            "paginate": {
-                "previous": "<",
-                "next": ">",
-            }
-        },
-    });
-    $('#table_museum').dataTable({
-        language: {
-            searchPlaceholder: "Search Museum Title",
-            search: "",
-            "paginate": {
-                "previous": "<",
-                "next": ">",
-            }
-        },
-    });
-    $('#table_patron').dataTable({
-        language: {
-            searchPlaceholder: "Search Patron Title",
-            search: "",
-            "paginate": {
-                "previous": "<",
-                "next": ">",
-            }
-        },
-    });
-    $('#table_upload').dataTable({
-        language: {
-            searchPlaceholder: "Search Upload Title",
-            search: "",
-            "paginate": {
-                "previous": "<",
-                "next": ">",
-            }
-        },
-    });
-
-
-});
-</script>
-
-
-
-
 
 <?php get_footer();?>

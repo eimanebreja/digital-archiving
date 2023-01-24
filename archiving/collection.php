@@ -36,13 +36,13 @@ get_header();
 
                             <?php
 $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
-query_posts(array(
+$collection_arg = array(
     'post_type' => 'collection',
     'post_status' => 'publish',
     'posts_per_page' => -1,
     'paged' => $paged,
-));
-$query = new WP_Query($args);
+);
+$collection_query = new WP_Query($collection_arg);
 ?>
                             <table id="table_collection" class="display">
                                 <thead>
@@ -54,10 +54,11 @@ $query = new WP_Query($args);
                                         <th> Action</th>
                                     </tr>
                                 </thead>
-                                <?php if (have_posts()): ?>
+                                <?php if ($collection_query->have_posts()) {?>
 
                                 <tbody>
-                                    <?php while (have_posts()): the_post();?>
+                                    <?php while ($collection_query->have_posts()) {
+    $collection_query->the_post();?>
                                     <tr>
                                         <td> <?php the_title();?></td>
                                         <td> <?php echo get_field("contributors") ?></td>
@@ -68,7 +69,7 @@ $query = new WP_Query($args);
 
 
                                             <?php
-    $collection_title = get_the_title();
+$collection_title = get_the_title();
     $arg_item = array(
         'post_type' => 'item',
         'meta_query' => array(
@@ -97,10 +98,16 @@ $query = new WP_Query($args);
                                         </td>
                                     </tr>
 
+                                    <?php
 
-                                    <?php endwhile;?>
+}
+    ?>
                                 </tbody>
-                                <?php endif;?>
+
+                                <?php
+
+}
+?>
                             </table>
                         </div>
 

@@ -34,13 +34,13 @@ get_header();
                         <div class="table__content">
                             <?php
 $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
-query_posts(array(
+$arg_item_type = array(
     'post_type' => 'item_type',
     'post_status' => 'publish',
     'posts_per_page' => -1,
     'paged' => $paged,
-));
-$query = new WP_Query($args);
+);
+$item_type_query = new WP_Query($arg_item_type);
 ?>
                             <table id="table_item_type" class="display">
                                 <thead>
@@ -51,15 +51,16 @@ $query = new WP_Query($args);
                                         <th> Action</th>
                                     </tr>
                                 </thead>
-                                <?php if (have_posts()): ?>
+                                <?php if ($item_type_query->have_posts()) {?>
 
                                 <tbody>
-                                    <?php while (have_posts()): the_post();?>
-	                                    <tr>
-	                                        <td> <?php the_title();?></td>
-	                                        <td> <?php echo wp_trim_words(get_the_content(), 12, '...'); ?></td>
-	                                        <td> <?php
-    $item_type_title = get_the_title();
+                                    <?php while ($item_type_query->have_posts()) {
+    $item_type_query->the_post();?>
+                                    <tr>
+                                        <td> <?php the_title();?></td>
+                                        <td> <?php echo wp_trim_words(get_the_content(), 12, '...'); ?></td>
+                                        <td> <?php
+$item_type_title = get_the_title();
     $arg_item = array(
         'post_type' => 'item',
         'meta_query' => array(
@@ -75,21 +76,27 @@ $query = new WP_Query($args);
     $count_item_type = $arr_posts_item->found_posts;
     echo $count_item_type;
     ?>
-	                                        </td>
-	                                        <td class="actions">
-	                                            <div class="table__content--body action">
-	                                                <a href="<?php the_permalink();?>" class="preview">Preview</a>
-	                                                <a href="<?php echo get_delete_post_link(); ?>" class="delete"
-	                                                    onclick="return confirm('Are you sure you wanna delete this?')">Delete</a>
-	                                                <a href="<?php echo site_url('/edit-item-type'); ?>?post=<?php the_ID();?>"
-	                                                    class="edit">Edit</a>
-	                                            </div>
-	                                        </td>
-	                                    </tr>
-	                                    <?php endwhile;?>
+                                        </td>
+                                        <td class="actions">
+                                            <div class="table__content--body action">
+                                                <a href="<?php the_permalink();?>" class="preview">Preview</a>
+                                                <a href="<?php echo get_delete_post_link(); ?>" class="delete"
+                                                    onclick="return confirm('Are you sure you wanna delete this?')">Delete</a>
+                                                <a href="<?php echo site_url('/edit-item-type'); ?>?post=<?php the_ID();?>"
+                                                    class="edit">Edit</a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <?php
 
+}
+    ?>
                                 </tbody>
-                                <?php endif;?>
+
+                                <?php
+
+}
+?>
                             </table>
                         </div>
                     </div>

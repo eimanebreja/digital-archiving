@@ -1,4 +1,4 @@
-<script src="<?php echo THEME_DIR; ?>/assets/js/app.js"></script>
+<!-- <script src="<?php echo THEME_DIR; ?>/assets/js/app.js"></script> -->
 
 
 <script>
@@ -11,7 +11,9 @@ function myFunction() {
     }
 }
 </script>
+
 <?php wp_footer();?>
+<!-- <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.js"></script> -->
 </body>
 
 </html>

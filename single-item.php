@@ -169,6 +169,15 @@ while (have_posts()) {
 
                                         <div class="single-area__row">
                                             <div class="single-area__row--label">
+                                                Sub - Collection
+                                            </div>
+                                            <div class="single-area__row--info">
+                                                <?php the_field('item_sub_collection');?>
+                                            </div>
+                                        </div>
+
+                                        <div class="single-area__row">
+                                            <div class="single-area__row--label">
                                                 Files
                                             </div>
                                             <div class="single-area__row--info">
@@ -208,3 +217,8 @@ endwhile;
 </section>
 
 <?php get_footer();?>
+
+<!-- stg8beesites_wp_nhcp
+stg8beesites_wp_wqxi6
+!$j404@h~#mkKPzf
+localhost:3306 -->

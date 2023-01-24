@@ -209,13 +209,31 @@
           }
           select {
             border: 1px solid #d9d9d9;
-            width: 100%;
-            height: 55px;
-            padding-left: 20px;
-            padding-right: 20px;
+            width: 100% !important;
+            height: 55px !important;
+            padding-left: 20px !important;
+            padding-right: 20px !important;
             font-size: 18px;
             color: $black;
             border-radius: 5px;
+          }
+
+          .select2-selection {
+            border-color: #d9d9d9;
+          }
+          .select2-container .select2-selection--single {
+            border: 1px solid #d9d9d9 !important;
+            width: 100% !important;
+            height: 55px !important;
+            padding-left: 20px !important;
+            padding-right: 20px !important;
+            font-size: 18px;
+            color: $black;
+            border-radius: 5px;
+
+            .select2-selection__rendered {
+              padding-top: 17px;
+            }
           }
         }
         .acf-form-submit {
@@ -464,6 +482,10 @@
       height: 20px;
     }
   }
+}
+
+.select2-dropdown {
+  margin-top: 20px !important;
 }
 
 @media only screen and (min-width: 1200px) and (max-width: 1450px) {

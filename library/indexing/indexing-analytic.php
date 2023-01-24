@@ -5,12 +5,22 @@
                 <span>More than 1000+ Browse Analytics</span>
             </div>
             <div class="button">
-                <a href="<?php echo site_url('/add-analytics'); ?>">Add</a>
+                <a href="<?php echo site_url('/add-analytic-and-book-literature'); ?>">Add</a>
             </div>
         </div>
     </div>
     <div class="tab__content--table">
         <table id="table_analytics" class="display">
+            <?php
+$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+$arg_analytics = array(
+    'post_type' => 'analytic-literature',
+    'post_status' => 'publish',
+    'posts_per_page' => -1,
+    'paged' => $paged,
+);
+$arg_query = new WP_Query($arg_analytics);
+?>
             <thead>
                 <tr>
                     <th>Counter</th>
@@ -18,30 +28,37 @@
                     <th> Action</th>
                 </tr>
             </thead>
+            <?php if ($arg_query->have_posts()) {$i = 1;?>
+
             <tbody>
+                <?php while ($arg_query->have_posts()) {
+    $arg_query->the_post();?>
                 <tr>
-                    <td class="counter">1</td>
+                    <td class="counter"><?php echo $i; ?></td>
                     <td>
                         <div class="catalog">
                             <div class="catalog__img">
-                                <img src="<?php echo THEME_DIR; ?>/assets/img/img_catalog.png" alt="">
+                                <?php
+$image = get_field('abL_cover_image');
+    if (!empty($image)): ?>
+                                <img src="<?php echo esc_url($image['url']); ?>"
+                                    alt="<?php echo esc_attr($image['alt']); ?>" />
+                                <?php endif;?>
                                 <div class="catalog__img--icon">
                                     <img src="<?php echo THEME_DIR; ?>/assets/img/icon/ic_media.png" alt="">
                                 </div>
                             </div>
                             <div class="catalog__info">
                                 <h3 class="catalog__info--title">
-                                    114th Anniversary of the martyrdom of Dr. Jose
-                                    Rizal,
-                                    December 30, 2010
+                                    <?php echo the_title() ?>
                                 </h3>
-                                <p class="catalog__info--desc">[Place of publication not
-                                    identified] : [publisher
-                                    not identified], [date of publication not
-                                    identified].
+                                <p class="catalog__info--desc">
+                                    <?php echo get_field("abl_place_of_publication") ?> :
+                                    <?php echo get_field("abl_publisher") ?> ,
+                                    <?php echo get_field("abl_year_of_publication") ?>
                                 </p>
                                 <p class="catalog__info--id">
-                                    CD 314
+                                    <?php echo get_field("abl_call_number") ?>
                                 </p>
                             </div>
 
@@ -50,166 +67,23 @@
                     </td>
                     <td class="actions">
                         <div class="table__content--body action">
-                            <a href="single-cataloging.php" class="preview">Preview</a>
-                            <a href="" class=" delete"
+                            <a href="<?php the_permalink();?>" class="preview">Preview</a>
+                            <a href="<?php echo get_delete_post_link(); ?>" class=" delete"
                                 onclick="return confirm('Are you sure you wanna delete this?')">Delete</a>
-                            <a href="" class="edit">Edit</a>
+                            <a href="<?php echo site_url('/edit-analytic-and-book-literature'); ?>?post=<?php the_ID();?>"
+                                class="edit">Edit</a>
                         </div>
                     </td>
                 </tr>
-                <tr>
-                    <td>1</td>
-                    <td>
-                        <div class="catalog">
-                            <div class="catalog__img">
-                                <img src="<?php echo THEME_DIR; ?>/assets/img/img_catalog.png" alt="">
-                                <div class="catalog__img--icon">
-                                    <img src="<?php echo THEME_DIR; ?>/assets/img/icon/ic_media.png" alt="">
-                                </div>
-                            </div>
-                            <div class="catalog__info">
-                                <h3 class="catalog__info--title">
-                                    114th Anniversary of the martyrdom of Dr. Jose
-                                    Rizal,
-                                    December 30, 2010
-                                </h3>
-                                <p class="catalog__info--desc">[Place of publication not
-                                    identified] : [publisher
-                                    not identified], [date of publication not
-                                    identified].
-                                </p>
-                                <p class="catalog__info--id">
-                                    CD 314
-                                </p>
-                            </div>
-
-                        </div>
-
-                    </td>
-                    <td class="actions">
-                        <div class="table__content--body action">
-                            <a href="single-cataloging.php" class="preview">Preview</a>
-                            <a href="" class=" delete"
-                                onclick="return confirm('Are you sure you wanna delete this?')">Delete</a>
-                            <a href="" class="edit">Edit</a>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>
-                        <div class="catalog">
-                            <div class="catalog__img">
-                                <img src="<?php echo THEME_DIR; ?>/assets/img/img_catalog.png" alt="">
-                                <div class="catalog__img--icon">
-                                    <img src="<?php echo THEME_DIR; ?>/assets/img/icon/ic_media.png" alt="">
-                                </div>
-                            </div>
-                            <div class="catalog__info">
-                                <h3 class="catalog__info--title">
-                                    114th Anniversary of the martyrdom of Dr. Jose
-                                    Rizal,
-                                    December 30, 2010
-                                </h3>
-                                <p class="catalog__info--desc">[Place of publication not
-                                    identified] : [publisher
-                                    not identified], [date of publication not
-                                    identified].
-                                </p>
-                                <p class="catalog__info--id">
-                                    CD 314
-                                </p>
-                            </div>
-
-                        </div>
-
-                    </td>
-                    <td class="actions">
-                        <div class="table__content--body action">
-                            <a href="single-cataloging.php" class="preview">Preview</a>
-                            <a href="" class=" delete"
-                                onclick="return confirm('Are you sure you wanna delete this?')">Delete</a>
-                            <a href="" class="edit">Edit</a>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>
-                        <div class="catalog">
-                            <div class="catalog__img">
-                                <img src="<?php echo THEME_DIR; ?>/assets/img/img_catalog.png" alt="">
-                                <div class="catalog__img--icon">
-                                    <img src="<?php echo THEME_DIR; ?>/assets/img/icon/ic_media.png" alt="">
-                                </div>
-                            </div>
-                            <div class="catalog__info">
-                                <h3 class="catalog__info--title">
-                                    114th Anniversary of the martyrdom of Dr. Jose
-                                    Rizal,
-                                    December 30, 2010
-                                </h3>
-                                <p class="catalog__info--desc">[Place of publication not
-                                    identified] : [publisher
-                                    not identified], [date of publication not
-                                    identified].
-                                </p>
-                                <p class="catalog__info--id">
-                                    CD 314
-                                </p>
-                            </div>
-
-                        </div>
-
-                    </td>
-                    <td class="actions">
-                        <div class="table__content--body action">
-                            <a href="single-cataloging.php" class="preview">Preview</a>
-                            <a href="" class=" delete"
-                                onclick="return confirm('Are you sure you wanna delete this?')">Delete</a>
-                            <a href="" class="edit">Edit</a>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>
-                        <div class="catalog">
-                            <div class="catalog__img">
-                                <img src="<?php echo THEME_DIR; ?>/assets/img/img_catalog.png" alt="">
-                                <div class="catalog__img--icon">
-                                    <img src="<?php echo THEME_DIR; ?>/assets/img/icon/ic_media.png" alt="">
-                                </div>
-                            </div>
-                            <div class="catalog__info">
-                                <h3 class="catalog__info--title">
-                                    114th Anniversary of the martyrdom of Dr. Jose
-                                    Rizal,
-                                    December 30, 2010
-                                </h3>
-                                <p class="catalog__info--desc">[Place of publication not
-                                    identified] : [publisher
-                                    not identified], [date of publication not
-                                    identified].
-                                </p>
-                                <p class="catalog__info--id">
-                                    CD 314
-                                </p>
-                            </div>
-
-                        </div>
-
-                    </td>
-                    <td class="actions">
-                        <div class="table__content--body action">
-                            <a href="single-cataloging.php" class="preview">Preview</a>
-                            <a href="" class=" delete"
-                                onclick="return confirm('Are you sure you wanna delete this?')">Delete</a>
-                            <a href="" class="edit">Edit</a>
-                        </div>
-                    </td>
-                </tr>
+                <?php
+$i++;
+}
+    ?>
             </tbody>
+            <?php
+
+}
+?>
         </table>
     </div>
 </div>
