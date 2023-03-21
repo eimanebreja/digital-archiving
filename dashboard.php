@@ -15,8 +15,6 @@ get_header();?>
                             <img src="<?php echo THEME_DIR; ?>/assets/img/head_frame.png" alt="Notif Icon">
                         </div>
                     </div>
-
-
                     <div class="dashboard">
                         <div class="dashboard__row">
                             <div class="dashboard__item">

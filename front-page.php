@@ -1,211 +1,225 @@
-<?php get_header();?>
+<?php get_header("main");?>
 
-<section>
-    <div class="main-content">
-        <?php require_once "partials/sidebar.php";?>
-        <?php require_once "partials/navbar.php";?>
-        <div class="main-body">
-            <div class="main-body__content">
-                <div class="main-body__container">
-                    <div class="main-body__content--header">
-                        <h3>Welcome to NHCP National Memory Project</h3>
-                        <div class="watermark">
-                            <img src="<?php echo THEME_DIR; ?>/assets/img/head_frame.png" alt="Notif Icon">
-                        </div>
-                    </div>
-                    <div class="dashboard">
-                        <div class="dashboard__row">
-                            <div class="dashboard__item">
-                                <div class="dashboard__item--title">
-                                    Objects
-                                </div>
-                                <div class="dashboard__item--count">
-                                    41
-                                </div>
-                                <div class="dashboard__item--watermark">
-                                    <img src="<?php echo THEME_DIR; ?>/assets/img/dashboard_frame.png"
-                                        alt="Watermark Item">
-                                </div>
-                            </div>
-                            <div class="dashboard__item">
-                                <div class="dashboard__item--title">
-                                    Objects Sets
-                                </div>
-                                <div class="dashboard__item--count">
-                                    3
-                                </div>
-                                <div class="dashboard__item--watermark">
-                                    <img src="<?php echo THEME_DIR; ?>/assets/img/dashboard_frame.png"
-                                        alt="Watermark Item">
-                                </div>
-                            </div>
-                            <div class="dashboard__item">
-                                <div class="dashboard__item--title">
-                                    Entities
-                                </div>
-                                <div class="dashboard__item--count">
-                                    42
-                                </div>
-                                <div class="dashboard__item--watermark">
-                                    <img src="<?php echo THEME_DIR; ?>/assets/img/dashboard_frame.png"
-                                        alt="Watermark Item">
-                                </div>
-                            </div>
-                            <div class="dashboard__item">
-                                <div class="dashboard__item--title">
-                                    Facts
-                                </div>
-                                <div class="dashboard__item--count">
-                                    2
-                                </div>
-                                <div class="dashboard__item--watermark">
-                                    <img src="<?php echo THEME_DIR; ?>/assets/img/dashboard_frame.png"
-                                        alt="Watermark Item">
-                                </div>
-                            </div>
-                            <div class="dashboard__item">
-                                <div class="dashboard__item--title">
-                                    Collections
-                                </div>
-                                <div class="dashboard__item--count">
-                                    52
-                                </div>
-                                <div class="dashboard__item--watermark">
-                                    <img src="<?php echo THEME_DIR; ?>/assets/img/dashboard_frame.png"
-                                        alt="Watermark Item">
-                                </div>
-                            </div>
-                            <div class="dashboard__item">
-                                <div class="dashboard__item--title">
-                                    Object Representations
-                                </div>
-                                <div class="dashboard__item--count">
-                                    31
-                                </div>
-                                <div class="dashboard__item--watermark">
-                                    <img src="<?php echo THEME_DIR; ?>/assets/img/dashboard_frame.png"
-                                        alt="Watermark Item">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="component">
-                        <div class="component__start">
-                            <div class="component__start--row">
-                                <div class="component__start--desc">
-                                    <div class="component__start--title">
-                                        Start Now
-                                    </div>
-                                    <div class="component__start--info">
-                                        <p>With our responsive themes and mobile and desktop apps, enjoy a seamless
-                                            experience on any device so will your blog the best visitors.</p>
-                                    </div>
-                                    <div class="component__start--button">
-                                        <a href="">Learn More</a>
-                                    </div>
-                                </div>
-                                <div class="component__start--img">
-                                    <img src="<?php echo THEME_DIR; ?>/assets/img/img_start.png" alt="Watermark Item">
-                                </div>
-                            </div>
-
-                        </div>
-                        <div class="component__notice">
-                            <div class="component__notice--title">
-                                Notice Board
-                            </div>
-                            <div class="component__notice--body">
-                                <div class="component__notice--content">
-                                    <div class="component__notice--icon">
-                                        <img src="<?php echo THEME_DIR; ?>/assets/img/icon/ic_mail.svg"
-                                            alt="Message Icon">
-                                    </div>
-                                    <div class="component__notice--info">
-                                        Selena comments on your posts about Algorithm tasks
-                                    </div>
-                                </div>
-                                <div class="component__notice--content">
-                                    <div class="component__notice--icon">
-                                        <img src="<?php echo THEME_DIR; ?>/assets/img/icon/ic_mail.svg"
-                                            alt="Message Icon">
-                                    </div>
-                                    <div class="component__notice--info">
-                                        Selena comments on your posts about Algorithm tasks
-                                    </div>
-                                </div>
-                                <div class="component__notice--content">
-                                    <div class="component__notice--icon">
-                                        <img src="<?php echo THEME_DIR; ?>/assets/img/icon/ic_mail.svg"
-                                            alt="Message Icon">
-                                    </div>
-                                    <div class="component__notice--info">
-                                        Selena comments on your posts about Algorithm tasks
-                                    </div>
-                                </div>
-                                <div class="component__notice--content">
-                                    <div class="component__notice--icon">
-                                        <img src="<?php echo THEME_DIR; ?>/assets/img/icon/ic_mail.svg"
-                                            alt="Message Icon">
-                                    </div>
-                                    <div class="component__notice--info">
-                                        Selena comments on your posts about Algorithm tasks
-                                    </div>
-                                </div>
-                                <div class="component__notice--content">
-                                    <div class="component__notice--icon">
-                                        <img src="<?php echo THEME_DIR; ?>/assets/img/icon/ic_mail.svg"
-                                            alt="Message Icon">
-                                    </div>
-                                    <div class="component__notice--info">
-                                        Selena comments on your posts about Algorithm tasks
-                                    </div>
-                                </div>
-                                <div class="component__notice--content">
-                                    <div class="component__notice--icon">
-                                        <img src="<?php echo THEME_DIR; ?>/assets/img/icon/ic_mail.svg"
-                                            alt="Message Icon">
-                                    </div>
-                                    <div class="component__notice--info">
-                                        Selena comments on your posts about Algorithm tasks
-                                    </div>
-                                </div>
-                                <div class="component__notice--content">
-                                    <div class="component__notice--icon">
-                                        <img src="<?php echo THEME_DIR; ?>/assets/img/icon/ic_mail.svg"
-                                            alt="Message Icon">
-                                    </div>
-                                    <div class="component__notice--info">
-                                        Selena comments on your posts about Algorithm tasks
-                                    </div>
-                                </div>
-                                <div class="component__notice--content">
-                                    <div class="component__notice--icon">
-                                        <img src="<?php echo THEME_DIR; ?>/assets/img/icon/ic_mail.svg"
-                                            alt="Message Icon">
-                                    </div>
-                                    <div class="component__notice--info">
-                                        Selena comments on your posts about Algorithm tasks
-                                    </div>
-                                </div>
-                                <div class="component__notice--content">
-                                    <div class="component__notice--icon">
-                                        <img src="<?php echo THEME_DIR; ?>/assets/img/icon/ic_mail.svg"
-                                            alt="Message Icon">
-                                    </div>
-                                    <div class="component__notice--info">
-                                        Selena comments on your posts about Algorithm tasks
-                                    </div>
-                                </div>
-                            </div>
+<div class="fv">
+    <div class="fv__area">
+        <div class="fv__area--carousel">
+            <div id="owl-banner" class="owl-carousel owl-theme">
+                <div class="item">
+                    <div class="fv__area--item">
+                        <div class="fv__area--img">
+                            <img src="<?php echo THEME_DIR; ?>/assets/img/nhcp_banner.png" alt="">
                         </div>
                     </div>
                 </div>
-                <?php require_once "partials/footer.php";?>
+                <div class="item">
+                    <div class="fv__area--item">
+                        <div class="fv__area--img">
+                            <img src="<?php echo THEME_DIR; ?>/assets/img/nhcp_banner.png" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="fv__area--item">
+                        <div class="fv__area--img">
+                            <img src="<?php echo THEME_DIR; ?>/assets/img/nhcp_banner.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="srch">
+                <div class="srch__container">
+                    <div class="srch__form">
+                        <form role="search" method="get" class="srch__form--area"
+                            action="<?php echo esc_url(home_url('/')); ?>">
+                            <div class="srch__form--input">
+                                <span class="screen-reader-text"><?php _e('Search for:', 'textdomain');?></span>
+                                <input type="search" class="search-field"
+                                    placeholder="<?php _e('Search in Catalogue', 'textdomain');?>"
+                                    value="<?php echo get_search_query(); ?>" name="s" />
+                            </div>
+                            <div class="srch__form--btn">
+                                <input type="submit" value="<?php _e('Search', 'textdomain');?>" />
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<section>
+    <div class="home-menu">
+        <div class="home-menu__container">
+            <div class="home-menu__row">
+                <a href="<?php echo site_url('/about-the-project'); ?>" class="home-menu__item">
+                    <div class="home-menu__item--img">
+                        <svg width="132" height="53" viewBox="0 0 132 53" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M130.885 29.7819C121.003 20.048 111.123 10.3152 101.24 0.582351C100.631 -0.0168187 100.701 -0.0641216 100.058 0.568686C94.568 5.97593 89.0781 11.3832 83.5883 16.7904C83.0837 17.2866 83.1467 17.275 82.6442 16.781C77.1299 11.3506 71.6155 5.91917 66.1023 0.487745C65.9465 0.334274 65.7737 0.192365 65.6606 0H65.5582C65.4174 0.150318 65.2808 0.306943 65.1336 0.452005C59.6086 5.89604 54.0825 11.339 48.5564 16.781C48.0124 17.3171 48.0902 17.3076 47.5376 16.7631C42.0713 11.38 36.606 5.9959 31.1397 0.612835C30.4687 -0.0473029 30.586 -0.0357399 29.9321 0.607579C20.0748 10.3183 10.2174 20.028 0.360115 29.7367C0.312109 29.784 0.263036 29.8313 0.215029 29.8797C-0.0666084 30.16 -0.0715869 30.4354 0.200094 30.7059C0.621484 31.1232 1.04287 31.5395 1.46746 31.9536C2.09155 32.5623 1.98913 32.6043 2.63989 31.9631C11.7494 22.9903 20.8589 14.0174 29.9684 5.04459C30.5775 4.44437 30.4964 4.44437 31.1056 5.04459C36.5719 10.4277 42.0372 15.8118 47.5024 21.1948C48.0956 21.7793 48.0188 21.7772 48.6012 21.2033C54.1039 15.7844 59.6054 10.3646 65.108 4.94578C65.6606 4.40232 65.5529 4.41494 66.0777 4.93211C71.5803 10.3499 77.0819 15.7697 82.5845 21.1885C83.1776 21.773 83.0741 21.7646 83.6758 21.1728C89.155 15.7781 94.6309 10.3814 100.111 4.98783C100.715 4.39391 100.567 4.3855 101.19 4.99834C110.288 13.9575 119.385 22.9188 128.483 31.879C128.592 31.9862 128.698 32.0945 128.809 32.1996C129.134 32.5034 129.159 32.5086 129.472 32.207C129.948 31.7486 130.415 31.2819 130.885 30.8184C131.458 30.2518 131.461 30.3474 130.886 29.7808L130.885 29.7819Z"
+                                fill="#97C9EC" />
+                            <path
+                                d="M126.652 34.3037C118.201 25.8495 109.747 17.3975 101.295 8.94438C100.699 8.34761 100.772 8.37114 100.193 8.94972C94.6789 14.4639 89.1647 19.9781 83.6504 25.4913C83.1127 26.0292 83.2121 26.026 82.6765 25.4902C77.159 19.9739 71.6426 14.4575 66.1252 8.94117C65.5575 8.37328 65.6462 8.37755 65.0679 8.95721C59.6017 14.4222 54.1356 19.8883 48.6705 25.3544C48.255 25.77 47.8448 25.7757 47.44 25.3715C41.9621 19.8936 36.4842 14.4158 31.0063 8.93796C30.4365 8.36793 30.4985 8.36365 29.9404 8.92192C26.2521 12.6105 22.5638 16.2981 18.8756 19.9867C14.0744 24.7876 9.27425 29.5874 4.47413 34.3893C4.1805 34.683 4.1805 34.9775 4.47413 35.2727C4.49765 35.2973 4.52224 35.3208 4.54683 35.3454C7.15857 37.9571 9.7703 40.5698 12.3831 43.1814C12.9219 43.7204 12.8642 43.7493 13.45 43.1643C18.9397 37.6736 24.4294 32.184 29.919 26.6944C30.5038 26.1094 30.4343 26.1148 31.0223 26.703C36.512 32.1926 42.0027 37.6822 47.4924 43.1729C48.0611 43.7418 47.997 43.7301 48.5572 43.1697C54.0714 37.6555 59.5857 32.1413 65.0999 26.6281C65.2207 26.5073 65.3437 26.3886 65.4677 26.2709C65.5575 26.1854 65.6537 26.1918 65.7414 26.2709C65.8429 26.3629 65.9391 26.4591 66.0364 26.5565C67.2947 27.8142 68.5519 29.0719 69.8092 30.3296C74.1261 34.646 78.443 38.9634 82.7609 43.2798C83.1618 43.6798 83.164 43.6777 83.5649 43.283C83.6141 43.2349 83.6622 43.1868 83.7103 43.1376C85.6571 41.1911 87.6038 39.2436 89.5506 37.2972C93.1544 33.6941 96.7572 30.09 100.362 26.4869C100.721 26.1287 100.723 26.1308 101.08 26.4805C101.154 26.5522 101.226 26.6249 101.299 26.6976C106.779 32.1733 112.258 37.6501 117.738 43.1258C117.847 43.2349 117.959 43.3397 118.065 43.4509C118.225 43.6188 118.382 43.6317 118.547 43.4574C118.629 43.3707 118.717 43.2894 118.802 43.205C121.427 40.5815 124.05 37.9571 126.675 35.3326C126.771 35.2363 126.869 35.139 126.962 35.0395C127.019 34.9775 127.075 34.9101 127.062 34.7882C127 34.5861 126.807 34.4599 126.653 34.3059L126.652 34.3037Z"
+                                fill="#97C9EC" />
+                            <path
+                                d="M115.475 45.0267C110.71 40.2664 105.945 35.5062 101.181 30.7459C100.585 30.1505 100.659 30.1675 100.084 30.7416C94.5978 36.2228 89.1115 41.7051 83.6241 47.1852C83.0816 47.7274 83.1826 47.7242 82.6549 47.1969C77.192 41.7401 71.7302 36.2824 66.2662 30.8256C65.5907 30.1505 65.7354 30.1441 65.0705 30.8076C59.6065 36.2632 54.1446 41.7221 48.6817 47.1788C48.1402 47.72 48.2498 47.7349 47.6753 47.1618C42.1879 41.6817 36.7016 36.1994 31.2153 30.7172C30.6494 30.1515 30.7111 30.176 30.1557 30.7321C25.3907 35.4923 20.6268 40.2526 15.8617 45.0129C15.7777 45.0969 15.6905 45.1788 15.6107 45.267C15.3575 45.5445 15.35 45.5881 15.6107 45.8539C16.0979 46.3526 16.5947 46.8417 17.0884 47.3351C17.6086 47.855 17.548 47.8508 18.0682 47.3308C22.0991 43.3042 26.1301 39.2765 30.16 35.2499C30.2685 35.1415 30.3759 35.033 30.4876 34.9277C30.5493 34.8693 30.6121 34.8097 30.7196 34.8172C30.8972 34.8725 31.0057 35.0351 31.1355 35.1649C36.624 40.645 42.1103 46.1283 47.5987 51.6084C48.2466 52.2559 48.1158 52.2687 48.7583 51.6275C54.2212 46.1708 59.6831 40.713 65.1471 35.2563C65.7237 34.6811 65.6088 34.6896 66.1918 35.2722C71.6674 40.7407 77.141 46.2101 82.6166 51.6796C83.1837 52.2453 83.0879 52.2421 83.6667 51.6637C89.1062 46.2314 94.5435 40.797 99.982 35.3637C100.066 35.2797 100.15 35.1946 100.235 35.1117C100.482 34.8693 100.734 34.8749 100.993 35.1287C101.053 35.1882 101.113 35.2489 101.174 35.3084C105.157 39.2872 109.139 43.2659 113.122 47.2447C113.217 47.3404 113.312 47.4404 113.411 47.5329C113.706 47.8061 113.744 47.8114 114.036 47.5265C114.522 47.0512 114.999 46.5663 115.481 46.0857C116.03 45.5371 116.047 45.5966 115.477 45.0267H115.475Z"
+                                fill="#97C9EC" />
+                        </svg>
+                    </div>
+                    <div class="home-menu__item--label">
+                        <span>
+                            About the Project
+                        </span>
+                    </div>
+                </a>
+                <a href="<?php echo site_url('/collections'); ?>" class="home-menu__item">
+                    <div class="home-menu__item--img">
+                        <svg width="97" height="64" viewBox="0 0 97 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M96.4433 38.0155L84.2469 58.708C83.2978 60.3183 81.9388 61.6544 80.3053 62.5829C78.6719 63.5114 76.8211 64 74.9374 64H7.58234C4.46301 64 2.51947 60.6512 4.09118 57.9845L16.2876 37.292C17.2367 35.6817 18.5958 34.3456 20.2292 33.4171C21.8627 32.4886 23.7135 32 25.5972 32H92.9523C96.0716 32 98.0152 35.3488 96.4433 38.0155ZM25.5972 26.6667H80.8334V18.6667C80.8334 14.2483 77.2144 10.6667 72.75 10.6667H45.8056L35.0278 0H8.08334C3.61898 0 0 3.58167 0 8V54.341L11.6328 34.6047C14.5187 29.7083 19.8697 26.6667 25.5972 26.6667Z"
+                                fill="#97C9EC" />
+                        </svg>
+                    </div>
+                    <div class="home-menu__item--label">
+                        <span>
+                            Collections
+                        </span>
+                    </div>
+                </a>
+                <a href="<?php echo site_url('/local-history-index'); ?>" class="home-menu__item lg">
+                    <div class="home-menu__item--img lg">
+                        <svg width="94" height="86" viewBox="0 0 94 86" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M10.4444 5.375C10.4444 2.40195 8.11076 0 5.22222 0C2.33368 0 0 2.40195 0 5.375V21.5V64.5C0 70.4293 4.68368 75.25 10.4444 75.25H41.7778V64.5H10.4444V26.875H41.7778V16.125H10.4444V5.375ZM47 32.25C47 35.223 49.3337 37.625 52.2222 37.625H88.7778C91.6663 37.625 94 35.223 94 32.25V10.75C94 7.77695 91.6663 5.375 88.7778 5.375H72.6705C71.2833 5.375 69.9615 4.80391 68.9823 3.79609L66.8118 1.57891C65.8326 0.571094 64.5108 0 63.1236 0H52.2222C49.3337 0 47 2.40195 47 5.375V32.25ZM47 80.625C47 83.598 49.3337 86 52.2222 86H88.7778C91.6663 86 94 83.598 94 80.625V59.125C94 56.152 91.6663 53.75 88.7778 53.75H72.6705C71.2833 53.75 69.9615 53.1789 68.9823 52.1711L66.8118 49.9371C65.8326 48.9293 64.5108 48.3582 63.1236 48.3582H52.2222C49.3337 48.3582 47 50.7602 47 53.7332V80.625Z"
+                                fill="#97C9EC" />
+                        </svg>
+                    </div>
+                    <div class="home-menu__item--label">
+                        <span>
+                            Local History Index
+                        </span>
+                    </div>
+                </a>
+                <a href="<?php echo site_url('/journal'); ?>" class="home-menu__item">
+                    <div class="home-menu__item--img lg">
+                        <svg width="74" height="86" viewBox="0 0 74 86" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M74 60.4688V4.03125C74 1.79727 72.2326 0 70.0357 0H15.8571C7.10268 0 0 7.22266 0 16.125V69.875C0 78.7773 7.10268 86 15.8571 86H70.0357C72.2326 86 74 84.2027 74 81.9688V79.2812C74 78.0215 73.4219 76.8793 72.5299 76.1402C71.8362 73.5535 71.8362 66.1797 72.5299 63.593C73.4219 62.8707 74 61.7285 74 60.4688ZM21.1429 22.5078C21.1429 21.9535 21.5888 21.5 22.1339 21.5H57.1518C57.6969 21.5 58.1429 21.9535 58.1429 22.5078V25.8672C58.1429 26.4215 57.6969 26.875 57.1518 26.875H22.1339C21.5888 26.875 21.1429 26.4215 21.1429 25.8672V22.5078ZM21.1429 33.2578C21.1429 32.7035 21.5888 32.25 22.1339 32.25H57.1518C57.6969 32.25 58.1429 32.7035 58.1429 33.2578V36.6172C58.1429 37.1715 57.6969 37.625 57.1518 37.625H22.1339C21.5888 37.625 21.1429 37.1715 21.1429 36.6172V33.2578ZM62.9991 75.25H15.8571C12.9335 75.25 10.5714 72.848 10.5714 69.875C10.5714 66.9187 12.95 64.5 15.8571 64.5H62.9991C62.6853 67.3723 62.6853 72.3777 62.9991 75.25Z"
+                                fill="#97C9EC" />
+                        </svg>
+                    </div>
+                    <div class="home-menu__item--label">
+                        <span>
+                            Journal
+                        </span>
+                    </div>
+                </a>
+                <a href="<?php echo site_url('/heralrdy-registry'); ?>" class="home-menu__item">
+                    <div class="home-menu__item--img lg">
+                        <svg width="86" height="86" viewBox="0 0 86 86" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M39.0527 0.869323C41.5555 -0.289774 44.4445 -0.289774 46.9473 0.869323L83.6652 17.8358C85.093 18.491 86 19.9188 86 21.4979C86 23.077 85.093 24.5048 83.6652 25.16L46.9473 42.1265C44.4445 43.2856 41.5555 43.2856 39.0527 42.1265L2.33477 25.16C0.907032 24.488 0 23.0602 0 21.4979C0 19.9356 0.907032 18.491 2.33477 17.8358L39.0527 0.869323ZM74.7293 35.2055L83.6652 39.3379C85.093 39.9931 86 41.4209 86 43C86 44.5791 85.093 46.0069 83.6652 46.6621L46.9473 63.6286C44.4445 64.7877 41.5555 64.7877 39.0527 63.6286L2.33477 46.6621C0.907032 45.9901 0 44.5623 0 43C0 41.4377 0.907032 39.9931 2.33477 39.3379L11.2707 35.2055L36.802 46.998C40.7324 48.8123 45.2676 48.8123 49.198 46.998L74.7293 35.2055ZM49.198 68.5001L74.7293 56.7076L83.6652 60.84C85.093 61.4952 86 62.923 86 64.5021C86 66.0812 85.093 67.509 83.6652 68.1642L46.9473 85.1307C44.4445 86.2898 41.5555 86.2898 39.0527 85.1307L2.33477 68.1642C0.907032 67.4922 0 66.0644 0 64.5021C0 62.9398 0.907032 61.4952 2.33477 60.84L11.2707 56.7076L36.802 68.5001C40.7324 70.3144 45.2676 70.3144 49.198 68.5001Z"
+                                fill="#97C9EC" />
+                        </svg>
+
+                    </div>
+                    <div class="home-menu__item--label">
+                        <span>
+                            Philippine Heraldry Registry
+                        </span>
+                    </div>
+                </a>
+                <a href="https://staging6.beecr8tive.net/Register/" class="home-menu__item">
+                    <div class="home-menu__item--img">
+                        <svg width="94" height="86" viewBox="0 0 94 86" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M26.1111 8.0625C26.1111 3.61133 29.6198 0 33.9444 0H41.7778V13.4375C41.7778 14.9156 42.9528 16.125 44.3889 16.125H49.6111C51.0472 16.125 52.2222 14.9156 52.2222 13.4375V0H60.0556C64.3802 0 67.8889 3.61133 67.8889 8.0625V29.5625C67.8889 34.0137 64.3802 37.625 60.0556 37.625H33.9444C29.6198 37.625 26.1111 34.0137 26.1111 29.5625V8.0625ZM7.83333 48.375H15.6667V61.8125C15.6667 63.2906 16.8417 64.5 18.2778 64.5H23.5C24.9361 64.5 26.1111 63.2906 26.1111 61.8125V48.375H33.9444C38.2691 48.375 41.7778 51.9863 41.7778 56.4375V77.9375C41.7778 82.3887 38.2691 86 33.9444 86H7.83333C3.50868 86 0 82.3887 0 77.9375V56.4375C0 51.9863 3.50868 48.375 7.83333 48.375ZM60.0556 48.375H67.8889V61.8125C67.8889 63.2906 69.0639 64.5 70.5 64.5H75.7222C77.1583 64.5 78.3333 63.2906 78.3333 61.8125V48.375H86.1667C90.4913 48.375 94 51.9863 94 56.4375V77.9375C94 82.3887 90.4913 86 86.1667 86H60.0556C55.7309 86 52.2222 82.3887 52.2222 77.9375V56.4375C52.2222 51.9863 55.7309 48.375 60.0556 48.375Z"
+                                fill="#97C9EC" />
+                        </svg>
+                    </div>
+                    <div class="home-menu__item--label">
+                        <span>
+                            Philippine Historic Site Registry
+                        </span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="home-collection">
+        <div class="home-collection__container">
+            <div class="home-collection__header">
+                <h2>Sample Collection</h2>
+            </div>
+            <div class="home-collection__slider">
+                <div id="owl-collection" class="owl-carousel owl-theme">
+                    <a href="" class="item">
+                        <div class="home-collection__slider--img">
+                            <img src="<?php echo THEME_DIR; ?>/assets/img/collection_sample.png" alt="">
+                        </div>
+                        <div class="home-collection__slider--title">
+                            Legarda, NHCP Launch New Online Program
+                        </div>
+                        <div class="home-collection__slider--cat">
+                            Rizal Collection
+                        </div>
+                    </a>
+                    <a href="" class="item">
+                        <div class="home-collection__slider--img">
+                            <img src="<?php echo THEME_DIR; ?>/assets/img/collection_sample.png" alt="">
+                        </div>
+                        <div class="home-collection__slider--title">
+                            Legarda, NHCP Launch New Online Program
+                        </div>
+                        <div class="home-collection__slider--cat">
+                            Rizal Collection
+                        </div>
+                    </a>
+                    <a href="" class="item">
+                        <div class="home-collection__slider--img">
+                            <img src="<?php echo THEME_DIR; ?>/assets/img/collection_sample.png" alt="">
+                        </div>
+                        <div class="home-collection__slider--title">
+                            Legarda, NHCP Launch New Online Program
+                        </div>
+                        <div class="home-collection__slider--cat">
+                            Rizal Collection
+                        </div>
+                    </a>
+                    <a href="" class="item">
+                        <div class="home-collection__slider--img">
+                            <img src="<?php echo THEME_DIR; ?>/assets/img/collection_sample.png" alt="">
+                        </div>
+                        <div class="home-collection__slider--title">
+                            Legarda, NHCP Launch New Online Program
+                        </div>
+                        <div class="home-collection__slider--cat">
+                            Rizal Collection
+                        </div>
+                    </a>
+                    <a href="" class="item">
+                        <div class="home-collection__slider--img">
+                            <img src="<?php echo THEME_DIR; ?>/assets/img/collection_sample.png" alt="">
+                        </div>
+                        <div class="home-collection__slider--title">
+                            Legarda, NHCP Launch New Online Program
+                        </div>
+                        <div class="home-collection__slider--cat">
+                            Rizal Collection
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="home-collection__header">
+                <h2>Sample Collection</h2>
             </div>
         </div>
     </div>
 </section>
 
 
-
-<?php get_footer();?>
+<?php get_footer("main");?>

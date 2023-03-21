@@ -1,0 +1,17 @@
+.serial {
+  &__content {
+    margin-top: 36px;
+    background-color: $white;
+    padding: 35px 26px 60px;
+    border-radius: 6px;
+  }
+  &__header {
+    h3 {
+      margin: 0;
+      font-size: 32px;
+      font-family: $f-bold;
+      color: #212121;
+      line-height: 21px;
+    }
+  }
+}

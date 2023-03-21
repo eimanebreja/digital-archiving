@@ -20,7 +20,7 @@ $arg_audiorecordings = array(
 );
 $arg_audiorecordings_query = new WP_Query($arg_audiorecordings);
 ?>
-        <table id="table_audiorecord" class="display">
+        <table id="table_audiorecord" class="display nowrap" style="width:100%">
             <thead>
                 <tr>
                     <th>Counter</th>
@@ -39,7 +39,7 @@ $arg_audiorecordings_query = new WP_Query($arg_audiorecordings);
                         <div class="catalog">
                             <div class="catalog__img">
                                 <?php
-$image = get_field('ar_cover_image');
+$image = get_field('cover_image');
     if (!empty($image)): ?>
                                 <img src="<?php echo esc_url($image['url']); ?>"
                                     alt="<?php echo esc_attr($image['alt']); ?>" />

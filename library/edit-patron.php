@@ -27,7 +27,7 @@ get_header();
 
                                     <?php acf_form(array(
     'post_id' => $post_id, //Variable that you'll get from the URL
-    'post_title' => false,
+    'post_title' => true,
     'post_content' => false,
     'field_groups' => array(
         'group_63cf55cf2d176',

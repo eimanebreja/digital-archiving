@@ -21,7 +21,7 @@ while (have_posts()) {
                             <div class="single-audio__row">
                                 <div class="single-audio__img">
                                     <?php
-$image = get_field('pa_cover_image');
+$image = get_field('cover_image');
     if (!empty($image)): ?>
                                     <img src="<?php echo esc_url($image['url']); ?>"
                                         alt="<?php echo esc_attr($image['alt']); ?>" />
@@ -32,14 +32,7 @@ $image = get_field('pa_cover_image');
                                     <div class="single-audio__information--category">
                                         Periodical Article Indexing Module
                                     </div>
-                                    <div class="single-audio__information--row">
-                                        <div class="single-audio__information--label">
-                                            Issue Number
-                                        </div>
-                                        <div class="single-audio__information--info">
-                                            <?php echo get_field("pa_issue_number") ?>
-                                        </div>
-                                    </div>
+
                                     <div class="single-audio__information--row">
                                         <div class="single-audio__information--label">
                                             Title Details
@@ -61,10 +54,43 @@ $image = get_field('pa_cover_image');
                                     </div>
                                     <div class="single-audio__information--row">
                                         <div class="single-audio__information--label">
-                                            No. of times borrowed
+                                            Call number
                                         </div>
                                         <div class="single-audio__information--info">
-                                            0
+                                            <?php echo get_field("call_number") ?>
+                                        </div>
+                                    </div>
+                                    <div class="single-audio__information--row">
+                                        <div class="single-audio__information--label">
+                                            Accession Number
+                                        </div>
+                                        <div class="single-audio__information--info">
+                                            <?php echo get_field("accession_number") ?>
+                                        </div>
+                                    </div>
+                                    <div class="single-audio__information--row">
+                                        <div class="single-audio__information--label">
+                                            Level
+                                        </div>
+                                        <div class="single-audio__information--info">
+
+                                            <?php
+$field = get_field_object('level');
+    $value = $field['value'];
+    $label = $field['choices'][$value];
+    ?>
+                                            <?php echo esc_html($label); ?>
+                                        </div>
+                                    </div>
+                                    <div class="single-audio__information--row">
+                                        <div class="single-audio__information--label">
+                                            Format
+                                        </div>
+                                        <div class="single-audio__information--info">
+                                            <?php
+$post_id = get_field("format_attribute");
+    $post_title = get_the_title($post_id);
+    echo $post_title;?>
                                         </div>
                                     </div>
                                 </div>

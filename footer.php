@@ -1,4 +1,4 @@
-<!-- <script src="<?php echo THEME_DIR; ?>/assets/js/app.js"></script> -->
+<script src="<?php echo THEME_DIR; ?>/assets/js/src/pdf.js"></script>
 
 
 <script>

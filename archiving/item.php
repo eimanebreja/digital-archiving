@@ -56,7 +56,7 @@ $arg_query = new WP_Query($arg_item);
                                     <?php while ($arg_query->have_posts()) {
     $arg_query->the_post();?>
                                     <tr>
-                                        <td> <?php echo get_field("title") ?></td>
+                                        <td> <?php the_title();?></td>
                                         <td> <?php echo get_field("creator") ?></td>
                                         <td>
                                             <?php echo get_field("type") ?>

@@ -1,6 +1,6 @@
 <?php
 /*** Template Name: Edit Collection Management */
-acf_form_head();
+ob_start();
 get_header();
 ?>
 
@@ -9,7 +9,7 @@ get_header();
 
         <?php include get_theme_file_path('partials/sidebar.php');?>
         <?php include get_theme_file_path('partials/navbar.php');?>
-        <?php $post_id = $_GET["post"];?>
+        <!-- <?php $post_id = $_GET["post"];?> -->
         <div class="main-body">
             <div class="main-body__content">
                 <div class="main-body__container">
@@ -26,27 +26,51 @@ get_header();
                                             Edit Collection Information
                                         </p>
                                     </div>
-                                    <div class="sub-btn">
-                                        <p class="text">Sub-Collection</p>
-                                        <a
-                                            href="<?php echo site_url('/add-sub-collection'); ?>?postid=<?php echo $post_id; ?>">
-                                            Add New
-                                        </a>
-                                        <a class="edit"
-                                            href="<?php echo site_url('/edit-sub-collection'); ?>?postid=<?php echo $post_id; ?>">
-                                            Edit
-                                        </a>
-                                    </div>
                                 </div>
                                 <div class="item-form-area">
-                                    <?php acf_form(array(
-    'post_id' => $post_id, //Variable that you'll get from the URL
-    'post_title' => false,
-    'post_content' => false,
-    'submit_value' => 'Update Collection',
-    // 'return' => '%post_url%', //Returns to the original post
-    'return' => add_query_arg('updated', 'true', site_url('edit-collection') . '?post=' . $post_id),
-));?>
+                                    <?php
+$term_id = $_GET["term"];
+$term = get_term($term_id, 'collection_management');
+
+if (isset($_POST['update_term'])) {
+    $term_name = sanitize_text_field($_POST['term_name']);
+    $term_description = $_POST['term_description'];
+
+    $term_update = wp_update_term($term_id, 'collection_management', array(
+        'name' => $term_name,
+        'description' => $term_description,
+    ));
+
+    if (is_wp_error($term_update)) {
+        // Handle the error.
+    } else {
+        // Update successful.
+        $term = get_term($term_update['term_id'], 'collection_management');
+        wp_redirect(site_url('/collection/'));
+        exit;
+    }
+}
+ob_end_flush();
+?>
+                                    <div class="collection">
+                                        <div class="collection__form">
+                                            <form action="" method="post">
+                                                <div class="collection__form--field">
+                                                    <label for="term_name">Name </label>
+                                                    <input type="text" id="term_name" name="term_name"
+                                                        value="<?php echo $term->name; ?>">
+                                                </div>
+                                                <div class="collection__form--field">
+                                                    <label for="term_description">Contributors </label>
+                                                    <input type="text" id="term_description" name="term_description"
+                                                        value="<?php echo $term->description; ?>">
+                                                </div>
+                                                <div class="collection__form--btn">
+                                                    <input type="submit" name="update_term" value="Update">
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
 

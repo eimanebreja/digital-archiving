@@ -22,7 +22,7 @@ $arg_audiovisuals = array(
 $arg_audiovisual_query = new WP_Query($arg_audiovisuals);
 ?>
 
-        <table id="table_cataloging" class="display">
+        <table id="table_cataloging" class="display nowrap" width="100%">
             <thead>
                 <tr>
                     <th>Counter</th>

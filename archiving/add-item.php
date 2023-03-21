@@ -30,12 +30,13 @@ get_header();
                                     </div>
                                 </div>
                                 <div class="item-form-area">
-                                    <form id="post" class="acf-form" action="" method="post">
-                                        <?php
+                                    <!-- <form id="post" class="acf-form" action="" method="post"> -->
+                                    <?php
 $date = date('M-d-Y');
 $random = time() . rand(10 * 45, 100 * 98);
 acf_form(array(
     'post_id' => 'new_post',
+    'post_title' => true,
     'field_groups' => array(
         'group_63b5362b4abed',
     ),
@@ -43,13 +44,12 @@ acf_form(array(
     'new_post' => array(
         'post_type' => 'item',
         'post_status' => 'publish',
-        'post_title' => 'Item No. ' . $random . ' ',
     ),
     'submit_value' => 'Add Item',
-    'form' => false,
+    'form' => true,
 ));
 ?>
-                                        <div class="variants">
+                                    <!-- <div class="variants">
                                             <div class="acf-field acf-field-post-object old-select-variant">
                                                 <div class="acf-label">
                                                     <label>Sub Collections</label>
@@ -66,9 +66,9 @@ acf_form(array(
                                             <input type="submit" class="acf-button button button-primary button-large"
                                                 value="Submit">
                                             <span class="acf-spinner"></span>
-                                        </div>
+                                        </div> -->
 
-                                    </form>
+                                    <!-- </form> -->
                                 </div>
 
                             </div>
@@ -84,7 +84,7 @@ acf_form(array(
     </div>
 </section>
 
-<script>
+<!-- <script>
 jQuery(function($) {
     $('#acf-field_63bd13eaa6ebc').on('change', function() {
         var po_select = $(this).val();
@@ -111,8 +111,16 @@ jQuery(function($) {
         $('#acf-field_63ca00f3c194a').val(value);
     });
 });
-</script>
+</script> -->
 <style>
+/* #variants {
+    margin-left: 10px;
+}
+
+.frontendhidden {
+    display: none;
+} */
+
 #variants {
     margin-left: 10px;
 }
@@ -120,6 +128,39 @@ jQuery(function($) {
 .frontendhidden {
     display: none;
 }
+
+.add-new-collection {
+    background-color: #6262c4;
+    width: 200px;
+    text-align: center;
+    padding: 10px;
+    color: #fff;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: -61px;
+}
+
+.remove-collection {
+    background-color: #e68080;
+    width: 200px;
+    text-align: center;
+    padding: 10px;
+    color: #fff;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.main-body__area--form .item-form-area .acf-input input[type=checkbox] {
+    border: 1px solid #d9d9d9;
+    width: auto !important;
+    height: auto !important;
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+    font-size: 18px;
+    color: #464e5f;
+    border-radius: 5px;
+}
 </style>
+
 
 <?php get_footer();?>

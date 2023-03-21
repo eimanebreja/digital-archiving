@@ -1,0 +1,782 @@
+.ftmain {
+  margin-top: 30px;
+  background-color: #161f48;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  position: relative;
+  .bgmask {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    img {
+      width: 50%;
+    }
+  }
+  &__container {
+    max-width: 1682px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin: 0 auto;
+  }
+  &__company {
+    display: flex;
+    justify-content: space-between;
+    &--logo {
+      flex-basis: 25%;
+      .logo-row {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        img {
+          width: 80px;
+        }
+      }
+      .logo-desc {
+        padding-top: 10px;
+        font-size: 14px;
+        color: $white;
+        font-family: $f-regular;
+        line-height: 18px;
+      }
+    }
+    &--menu {
+      flex-basis: 15%;
+      .ftmenu {
+      }
+      .ftmenu-list {
+        list-style: none;
+      }
+      .ftmenu-link {
+        font-size: 14px;
+        color: $white !important;
+        font-family: $f-regular;
+        line-height: 18px;
+        &:hover {
+          text-decoration: none;
+        }
+      }
+    }
+    &--address {
+      flex-basis: 35%;
+      .address-row {
+        padding-top: 10px;
+        display: flex;
+        gap: 10px;
+        .icon-address {
+          img {
+            width: 19px;
+          }
+        }
+        .text-address {
+          font-size: 14px;
+          color: $white;
+          font-family: $f-regular;
+          line-height: 18px;
+          a {
+            display: flex;
+            color: $white !important;
+            &:hover {
+              text-decoration: none;
+            }
+          }
+        }
+      }
+      .follow {
+        padding-top: 30px;
+        .follow-title {
+          font-size: 17px;
+          font-family: $f-bold;
+          color: $white;
+          line-height: 26px;
+        }
+        .follow-row {
+          display: flex;
+          gap: 5px;
+          a {
+            img {
+            }
+          }
+        }
+      }
+    }
+    &--map {
+      flex-basis: 25%;
+      iframe {
+        width: 100%;
+        height: 207px;
+      }
+    }
+  }
+  &__other {
+    padding-top: 100px;
+    display: flex;
+    justify-content: space-between;
+    gap: 70px;
+    .other-logo {
+      margin-top: 30px;
+      flex-basis: 20%;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      &__img {
+        img {
+          width: 108px;
+          display: block;
+        }
+      }
+      &__title {
+        .head {
+          font-size: 17px;
+          color: $white;
+          font-family: $f-bold;
+          line-height: 24px;
+        }
+        .content {
+          padding-top: 10px;
+          font-size: 14px;
+          color: $white;
+          font-family: $f-regular;
+          line-height: 18px;
+        }
+      }
+    }
+    &--about {
+      flex-basis: 19%;
+      .about-head {
+        margin-top: 30px;
+        font-size: 17px;
+        color: $white;
+        font-family: $f-bold;
+        line-height: 24px;
+      }
+      .about-desc {
+        padding-top: 7px;
+        font-size: 14px;
+        color: $white;
+        font-family: $f-regular;
+        line-height: 18px;
+      }
+      .about-link {
+        padding-top: 30px;
+        a {
+          display: block;
+          font-size: 14px;
+          color: $white;
+          font-family: $f-regular;
+          line-height: 18px;
+          padding-top: 5px;
+          &:hover {
+            text-decoration: none;
+          }
+        }
+      }
+    }
+    &--submenu {
+      flex-basis: 23%;
+      &.other-agency {
+        display: none;
+      }
+      .sub-menu-title {
+        margin-top: 30px;
+        font-size: 17px;
+        color: $white;
+        font-family: $f-bold;
+        line-height: 24px;
+      }
+      .sub-menu-link {
+        padding-top: 5px;
+        display: block;
+        font-size: 14px;
+        color: $white;
+        font-family: $f-regular;
+        line-height: 18px;
+        padding-top: 5px;
+        &:hover {
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}
+.copyright {
+  background-color: $white;
+  font-size: 13px;
+  line-height: 18px;
+  color: #585859;
+  font-family: $f-regular;
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+@media only screen and (min-width: 1200px) and (max-width: 1450px) {
+  .ftmain {
+    margin-top: 30px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    .bgmask {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      img {
+        width: 50%;
+      }
+    }
+    &__container {
+      max-width: 1280px;
+    }
+    &__company {
+      gap: 30px;
+      &--logo {
+        flex-basis: 25%;
+        .logo-row {
+          img {
+            width: 70px;
+          }
+        }
+        .logo-desc {
+          font-size: 12px;
+        }
+      }
+      &--menu {
+        flex-basis: 15%;
+        .ftmenu {
+        }
+        .ftmenu-list {
+          list-style: none;
+        }
+        .ftmenu-link {
+          font-size: 12px;
+          line-height: 18px;
+        }
+      }
+      &--address {
+        flex-basis: 35%;
+        .address-row {
+          padding-top: 10px;
+          display: flex;
+          gap: 10px;
+          .icon-address {
+            img {
+              width: 15px;
+            }
+          }
+          .text-address {
+            font-size: 12px;
+            padding-top: 0px;
+          }
+        }
+        .follow {
+          padding-top: 30px;
+          .follow-title {
+            font-size: 15px;
+            line-height: 26px;
+          }
+          .follow-row {
+            display: flex;
+            gap: 5px;
+            a {
+              img {
+                width: 20px;
+              }
+            }
+          }
+        }
+      }
+      &--map {
+        flex-basis: 25%;
+        iframe {
+          width: 100%;
+          height: 207px;
+        }
+      }
+    }
+    &__other {
+      padding-top: 60px;
+      gap: 30px;
+      .other-logo {
+        margin-top: 30px;
+        &__img {
+          img {
+            width: 80px;
+          }
+        }
+        &__title {
+          .head {
+            font-size: 15px;
+            color: $white;
+            font-family: $f-bold;
+            line-height: 24px;
+          }
+          .content {
+            font-size: 12px;
+          }
+        }
+      }
+      &--about {
+        flex-basis: 19%;
+        .about-head {
+          margin-top: 30px;
+          font-size: 15px;
+        }
+        .about-desc {
+          padding-top: 7px;
+          font-size: 12px;
+        }
+        .about-link {
+          padding-top: 30px;
+          a {
+            font-size: 12px;
+          }
+        }
+      }
+      &--submenu {
+        flex-basis: 23%;
+        .sub-menu-title {
+          font-size: 15px;
+        }
+        .sub-menu-link {
+          font-size: 12px;
+        }
+      }
+    }
+  }
+  .copyright {
+    font-size: 11px;
+  }
+}
+
+@media only screen and (min-width: 1024px) and (max-width: 1199px) {
+  .ftmain {
+    margin-top: 30px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    .bgmask {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      img {
+        width: 50%;
+      }
+    }
+    &__container {
+      max-width: 1280px;
+    }
+    &__company {
+      gap: 30px;
+      &--logo {
+        flex-basis: 25%;
+        .logo-row {
+          img {
+            width: 70px;
+          }
+        }
+        .logo-desc {
+          font-size: 12px;
+        }
+      }
+      &--menu {
+        flex-basis: 15%;
+        .ftmenu {
+        }
+        .ftmenu-list {
+          list-style: none;
+        }
+        .ftmenu-link {
+          font-size: 12px;
+          line-height: 18px;
+        }
+      }
+      &--address {
+        flex-basis: 35%;
+        .address-row {
+          padding-top: 10px;
+          display: flex;
+          gap: 10px;
+          .icon-address {
+            img {
+              width: 15px;
+            }
+          }
+          .text-address {
+            font-size: 12px;
+            padding-top: 0px;
+          }
+        }
+        .follow {
+          padding-top: 30px;
+          .follow-title {
+            font-size: 15px;
+            line-height: 26px;
+          }
+          .follow-row {
+            display: flex;
+            gap: 5px;
+            a {
+              img {
+                width: 20px;
+              }
+            }
+          }
+        }
+      }
+      &--map {
+        flex-basis: 25%;
+        iframe {
+          width: 100%;
+          height: 207px;
+        }
+      }
+    }
+    &__other {
+      padding-top: 60px;
+      gap: 30px;
+      .other-logo {
+        margin-top: 30px;
+        &__img {
+          img {
+            width: 80px;
+          }
+        }
+        &__title {
+          .head {
+            font-size: 15px;
+            color: $white;
+            font-family: $f-bold;
+            line-height: 24px;
+          }
+          .content {
+            font-size: 12px;
+          }
+        }
+      }
+      &--about {
+        flex-basis: 19%;
+        .about-head {
+          margin-top: 30px;
+          font-size: 15px;
+        }
+        .about-desc {
+          padding-top: 7px;
+          font-size: 12px;
+        }
+        .about-link {
+          padding-top: 30px;
+          a {
+            font-size: 12px;
+          }
+        }
+      }
+      &--submenu {
+        flex-basis: 23%;
+        .sub-menu-title {
+          font-size: 15px;
+        }
+        .sub-menu-link {
+          font-size: 12px;
+        }
+      }
+    }
+  }
+  .copyright {
+    font-size: 11px;
+  }
+}
+
+@media only screen and (min-width: 750px) and (max-width: 1023px) {
+  .ftmain {
+    margin-top: 30px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    .bgmask {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      img {
+        width: 50%;
+      }
+    }
+    &__container {
+      max-width: 720px;
+    }
+    &__company {
+      flex-wrap: wrap;
+      gap: 30px;
+      &--logo {
+        flex-basis: 50%;
+        .logo-row {
+          img {
+            width: 70px;
+          }
+        }
+        .logo-desc {
+          font-size: 12px;
+        }
+      }
+      &--menu {
+        flex-basis: 40%;
+        .ftmenu {
+        }
+        .ftmenu-list {
+          list-style: none;
+        }
+        .ftmenu-link {
+          font-size: 12px;
+          line-height: 18px;
+        }
+      }
+      &--address {
+        flex-basis: 40%;
+        .address-row {
+          padding-top: 10px;
+          display: flex;
+          gap: 10px;
+          .icon-address {
+            img {
+              width: 15px;
+            }
+          }
+          .text-address {
+            font-size: 12px;
+            padding-top: 0px;
+          }
+        }
+        .follow {
+          padding-top: 30px;
+          .follow-title {
+            font-size: 15px;
+            line-height: 26px;
+          }
+          .follow-row {
+            display: flex;
+            gap: 5px;
+            a {
+              img {
+                width: 20px;
+              }
+            }
+          }
+        }
+      }
+      &--map {
+        flex-basis: 50%;
+        iframe {
+          width: 100%;
+          height: 207px;
+        }
+      }
+    }
+    &__other {
+      padding-top: 60px;
+      gap: 30px;
+      flex-wrap: wrap;
+      &--logo {
+        flex-basis: 55%;
+      }
+      .other-logo {
+        margin-top: 30px;
+
+        &__img {
+          img {
+            width: 80px;
+          }
+        }
+        &__title {
+          .head {
+            font-size: 15px;
+            color: $white;
+            font-family: $f-bold;
+            line-height: 24px;
+          }
+          .content {
+            font-size: 12px;
+          }
+        }
+      }
+      &--about {
+        flex-basis: 35%;
+        .about-head {
+          margin-top: 30px;
+          font-size: 15px;
+        }
+        .about-desc {
+          padding-top: 7px;
+          font-size: 12px;
+        }
+        .about-link {
+          padding-top: 30px;
+          a {
+            font-size: 12px;
+          }
+        }
+      }
+      &--submenu {
+        flex-basis: 40%;
+        .sub-menu-title {
+          font-size: 15px;
+        }
+        .sub-menu-link {
+          font-size: 12px;
+        }
+      }
+    }
+  }
+  .copyright {
+    font-size: 11px;
+  }
+}
+
+@media screen and (max-width: 749px) {
+  .ftmain {
+    margin-top: 30px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    .bgmask {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      img {
+        width: 100%;
+      }
+    }
+    &__container {
+      max-width: 380px;
+    }
+    &__company {
+      flex-wrap: wrap;
+      gap: 0px;
+      &--logo {
+        flex-basis: 100%;
+        .logo-row {
+          gap: 30px;
+          img {
+            width: 70px;
+          }
+        }
+        .logo-desc {
+          font-size: 12px;
+        }
+      }
+      &--menu {
+        padding-top: 30px;
+        flex-basis: 20%;
+        .ftmenu {
+          margin: 0;
+          padding: 0;
+        }
+        .ftmenu-list {
+          list-style: none;
+        }
+        .ftmenu-link {
+          font-size: 12px;
+          line-height: 18px;
+        }
+      }
+      &--address {
+        flex-basis: 60%;
+        padding-top: 30px;
+        .address-row {
+          padding-top: 10px;
+          display: flex;
+          gap: 10px;
+          .icon-address {
+            img {
+              width: 15px;
+            }
+          }
+          .text-address {
+            font-size: 12px;
+            padding-top: 0px;
+          }
+        }
+        .follow {
+          padding-top: 30px;
+          .follow-title {
+            font-size: 15px;
+            line-height: 26px;
+          }
+          .follow-row {
+            display: flex;
+            gap: 5px;
+            a {
+              img {
+                width: 20px;
+              }
+            }
+          }
+        }
+      }
+      &--map {
+        padding-top: 30px;
+        flex-basis: 100%;
+        iframe {
+          width: 100%;
+          height: 207px;
+        }
+      }
+    }
+    &__other {
+      padding-top: 30px;
+      gap: 30px;
+      flex-wrap: wrap;
+      &--logo {
+        flex-basis: 100%;
+      }
+      .other-logo {
+        margin-top: 30px;
+
+        &__img {
+          img {
+            width: 70px;
+          }
+        }
+        &__title {
+          .head {
+            font-size: 15px;
+            color: $white;
+            font-family: $f-bold;
+            line-height: 24px;
+          }
+          .content {
+            font-size: 12px;
+          }
+        }
+      }
+      &--about {
+        flex-basis: 35%;
+        .about-head {
+          margin-top: 30px;
+          font-size: 15px;
+        }
+        .about-desc {
+          padding-top: 7px;
+          font-size: 12px;
+        }
+        .about-link {
+          padding-top: 30px;
+          a {
+            font-size: 12px;
+          }
+        }
+      }
+      &--submenu {
+        flex-basis: 40%;
+        &.other-agency {
+          display: block;
+        }
+        .other-agenc-btm {
+          display: none;
+        }
+        .sub-menu-title {
+          font-size: 15px;
+        }
+        .sub-menu-link {
+          font-size: 12px;
+        }
+      }
+    }
+  }
+  .copyright {
+    font-size: 9px;
+  }
+}

@@ -3,9 +3,9 @@ function collection_custom_post_type()
 {
     register_post_type('collection',
         array(
-            'rewrite' => array('slug' => 'collections'),
+            'rewrite' => array('slug' => 'post-collection'),
             'labels' => array(
-                'name' => 'Collection Management',
+                'name' => 'Collection',
                 'singular_name' => 'Collection',
                 'add_new_item' => 'Add New Collection',
                 'edit_item' => 'Edit Collection',
@@ -16,8 +16,8 @@ function collection_custom_post_type()
             'supports' => array(
                 'title', 'thumbnail', 'editor', 'excerpt', 'comments',
             ),
-            'taxonomies' => array('category'),
-            'show_in_menu' => 'archiving',
+            // 'taxonomies' => array('category'),
+            // 'show_in_menu' => 'archiving',
         )
     );
 }

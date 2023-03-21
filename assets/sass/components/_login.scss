@@ -2,6 +2,7 @@
   &__area {
     display: flex;
     justify-content: space-between;
+    align-items: stretch;
     height: 100vh;
   }
   &__form {
@@ -291,14 +292,21 @@
       }
     }
     &--img {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      img {
-        display: block;
-        width: 100%;
-      }
+      background-image: url(../img/login_banner.png);
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: 50%;
+      height: 100%;
+
+      // height: 100vh;
+      // position: absolute;
+      // bottom: 0;
+      // left: 0;
+      // right: 0;
+      // img {
+      //   display: block;
+      //   width: 100%;
+      // }
     }
   }
   &__alreadyaccount {
@@ -444,6 +452,391 @@
     }
     &__fv {
       padding-top: 65px;
+      &--logo {
+        img {
+          width: 270px;
+        }
+        h1 {
+          font-size: 100px;
+          line-height: 45px;
+        }
+      }
+    }
+    &__alreadyaccount {
+      padding-top: 20px;
+    }
+  }
+}
+
+@media only screen and (min-width: 1024px) and (max-width: 1199px) {
+  .login {
+    &__area {
+      flex-wrap: wrap;
+    }
+    &__form {
+      flex-basis: 100%;
+      background-color: $dark;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      &--content {
+        flex-basis: 100%;
+        max-width: 487px;
+        margin: 0 auto;
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+      &--head {
+        gap: 15px;
+        .logo {
+          img {
+            width: 143px;
+          }
+        }
+        .acronymn {
+          h1 {
+            font-size: 26px;
+            line-height: 30px;
+          }
+        }
+      }
+      &--title {
+        padding-top: 20px;
+        h2 {
+          font-size: 24px;
+          line-height: 28px;
+        }
+        p {
+          padding-top: 5px;
+          font-size: 16px;
+        }
+      }
+      &--islogin {
+        text-align: center;
+        padding-top: 30px;
+        .iflogin {
+          transition: 0.3s;
+          text-align: center;
+          font-family: $f-medium;
+          font-size: 18px;
+          color: $white;
+          margin: 0;
+        }
+
+        a {
+          font-size: 16px;
+        }
+      }
+      #loginform {
+        .login-username {
+          padding-top: 15px;
+        }
+        .login-password {
+          padding-top: 15px;
+        }
+        .login-submit {
+          padding-top: 30px;
+
+          .button {
+            font-size: 14px;
+            height: 42px;
+          }
+        }
+        label {
+          font-size: 14px;
+        }
+        .input {
+          height: 60px;
+        }
+      }
+      .login-msg {
+        padding-top: 20px;
+        font-size: 12px;
+      }
+      &--input {
+        padding-top: 5px;
+        input {
+          height: 60px;
+        }
+      }
+      &--btn {
+        padding-top: 40px;
+        max-width: 109px;
+        margin: 0 auto;
+
+        button,
+        .register_btn {
+          font-size: 14px;
+          height: 42px;
+        }
+      }
+      &--google {
+        padding-top: 30px;
+        button {
+          font-size: 14px;
+          height: 50px;
+        }
+      }
+    }
+    &__fv {
+      padding-top: 65px;
+      flex-basis: 100%;
+      &--logo {
+        img {
+          width: 270px;
+        }
+        h1 {
+          font-size: 100px;
+          line-height: 45px;
+        }
+      }
+    }
+    &__alreadyaccount {
+      padding-top: 20px;
+    }
+  }
+}
+@media only screen and (min-width: 750px) and (max-width: 1023px) {
+  .login {
+    &__area {
+      flex-wrap: wrap;
+    }
+    &__form {
+      flex-basis: 100%;
+      background-color: $dark;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      &--content {
+        flex-basis: 100%;
+        max-width: 487px;
+        margin: 0 auto;
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+      &--head {
+        gap: 15px;
+        .logo {
+          img {
+            width: 143px;
+          }
+        }
+        .acronymn {
+          h1 {
+            font-size: 26px;
+            line-height: 30px;
+          }
+        }
+      }
+      &--title {
+        padding-top: 20px;
+        h2 {
+          font-size: 24px;
+          line-height: 28px;
+        }
+        p {
+          padding-top: 5px;
+          font-size: 16px;
+        }
+      }
+      &--islogin {
+        text-align: center;
+        padding-top: 30px;
+        .iflogin {
+          transition: 0.3s;
+          text-align: center;
+          font-family: $f-medium;
+          font-size: 18px;
+          color: $white;
+          margin: 0;
+        }
+
+        a {
+          font-size: 16px;
+        }
+      }
+      #loginform {
+        .login-username {
+          padding-top: 15px;
+        }
+        .login-password {
+          padding-top: 15px;
+        }
+        .login-submit {
+          padding-top: 30px;
+
+          .button {
+            font-size: 14px;
+            height: 42px;
+          }
+        }
+        label {
+          font-size: 14px;
+        }
+        .input {
+          height: 60px;
+        }
+      }
+      .login-msg {
+        padding-top: 20px;
+        font-size: 12px;
+      }
+      &--input {
+        padding-top: 5px;
+        input {
+          height: 60px;
+        }
+      }
+      &--btn {
+        padding-top: 40px;
+        max-width: 109px;
+        margin: 0 auto;
+
+        button,
+        .register_btn {
+          font-size: 14px;
+          height: 42px;
+        }
+      }
+      &--google {
+        padding-top: 30px;
+        button {
+          font-size: 14px;
+          height: 50px;
+        }
+      }
+    }
+    &__fv {
+      padding-top: 65px;
+      flex-basis: 100%;
+      &--logo {
+        img {
+          width: 270px;
+        }
+        h1 {
+          font-size: 100px;
+          line-height: 45px;
+        }
+      }
+    }
+    &__alreadyaccount {
+      padding-top: 20px;
+    }
+  }
+}
+@media screen and (max-width: 749px) {
+  .login {
+    &__area {
+      flex-wrap: wrap;
+    }
+    &__form {
+      flex-basis: 100%;
+      background-color: $dark;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      &--content {
+        flex-basis: 100%;
+        max-width: 487px;
+        margin: 0 auto;
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+      &--head {
+        gap: 15px;
+        .logo {
+          img {
+            width: 113px;
+          }
+        }
+        .acronymn {
+          h1 {
+            font-size: 18px;
+            line-height: 27px;
+          }
+        }
+      }
+      &--title {
+        padding-top: 20px;
+        h2 {
+          font-size: 24px;
+          line-height: 28px;
+        }
+        p {
+          padding-top: 5px;
+          font-size: 16px;
+        }
+      }
+      &--islogin {
+        text-align: center;
+        padding-top: 30px;
+        .iflogin {
+          transition: 0.3s;
+          text-align: center;
+          font-family: $f-medium;
+          font-size: 18px;
+          color: $white;
+          margin: 0;
+        }
+
+        a {
+          font-size: 16px;
+        }
+      }
+      #loginform {
+        .login-username {
+          padding-top: 15px;
+        }
+        .login-password {
+          padding-top: 15px;
+        }
+        .login-submit {
+          padding-top: 30px;
+
+          .button {
+            font-size: 14px;
+            height: 42px;
+          }
+        }
+        label {
+          font-size: 14px;
+        }
+        .input {
+          height: 52px;
+        }
+      }
+      .login-msg {
+        padding-top: 20px;
+        font-size: 12px;
+      }
+      &--input {
+        padding-top: 5px;
+        input {
+          height: 52px;
+        }
+      }
+      &--btn {
+        padding-top: 40px;
+        max-width: 109px;
+        margin: 0 auto;
+
+        button,
+        .register_btn {
+          font-size: 14px;
+          height: 42px;
+        }
+      }
+      &--google {
+        padding-top: 30px;
+        button {
+          font-size: 14px;
+          height: 50px;
+        }
+      }
+    }
+    &__fv {
+      padding-top: 65px;
+      flex-basis: 100%;
       &--logo {
         img {
           width: 270px;

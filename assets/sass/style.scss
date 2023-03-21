@@ -24,7 +24,11 @@ body {
 .sp {
   display: none;
 }
+@import "components/navbarmain";
 @import "components/navbar";
+@import "components/home";
+@import "components/contact";
+@import "components/about";
 @import "components/main";
 @import "components/login";
 @import "components/sidebar";
@@ -34,7 +38,18 @@ body {
 @import "components/rarematerials";
 @import "components/tab";
 @import "components/cataloging";
+@import "components/circulation";
+@import "components/inventory";
+@import "components/user";
+@import "components/serial";
+@import "components/collection";
+@import "components/search";
+@import "components/collectionpage";
+@import "components/journal";
+@import "components/local-history";
+@import "components/collectionview";
 @import "components/footer";
+@import "components/footermain";
 
 .hidden {
   display: none;

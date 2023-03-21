@@ -1,5 +1,6 @@
 <?php
 /*** Template Name: Collection Management */
+ob_start();
 get_header();
 ?>
 
@@ -18,7 +19,6 @@ get_header();
                     </div>
 
                     <div class="table">
-
                         <div class="table__header">
                             <div class="table__header--browse">
                                 <div class="browse">
@@ -33,83 +33,97 @@ get_header();
                         </div>
                         <div class="table__content">
 
-
                             <?php
-$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
-$collection_arg = array(
-    'post_type' => 'collection',
-    'post_status' => 'publish',
-    'posts_per_page' => -1,
-    'paged' => $paged,
+$args = array(
+    'taxonomy' => 'collection_management',
+    'parent' => 0,
+    'hide_empty' => false,
 );
-$collection_query = new WP_Query($collection_arg);
-?>
+$parent_categories = get_terms($args);?>
                             <table id="table_collection" class="display">
                                 <thead>
                                     <tr>
                                         <th> Title</th>
                                         <th> Contributors</th>
-                                        <th> Date Added</th>
                                         <th> Total Number of Items</th>
                                         <th> Action</th>
                                     </tr>
                                 </thead>
-                                <?php if ($collection_query->have_posts()) {?>
+
 
                                 <tbody>
-                                    <?php while ($collection_query->have_posts()) {
-    $collection_query->the_post();?>
+                                    <?php foreach ($parent_categories as $parent_category) {?>
                                     <tr>
-                                        <td> <?php the_title();?></td>
-                                        <td> <?php echo get_field("contributors") ?></td>
+                                        <td> <?php echo $parent_category->name; ?></td>
                                         <td>
-                                            <?php echo get_field("date_added") ?>
+                                            <?php echo $parent_category->description; ?>
                                         </td>
                                         <td>
-
-
-                                            <?php
-$collection_title = get_the_title();
-    $arg_item = array(
-        'post_type' => 'item',
-        'meta_query' => array(
-            'relation' => 'AND',
-            array(
-                'key' => 'collection',
-                'value' => $collection_title,
-                'compare' => 'LIKE',
-            ),
-        ),
-    );
-    $arr_posts_item = new WP_Query($arg_item);
-    $count_item_type = $arr_posts_item->found_posts;
-    echo $count_item_type;
-
-    ?>
+                                            <?php echo $parent_category->count; ?>
                                         </td>
                                         <td class="actions">
                                             <div class="table__content--body action">
-                                                <a href="<?php the_permalink();?>" class="preview">Preview</a>
-                                                <a href="<?php echo get_delete_post_link(); ?>" class="delete"
-                                                    onclick="return confirm('Are you sure you wanna delete this?')">Delete</a>
-                                                <a href="<?php echo site_url('/edit-collection'); ?>?post=<?php the_ID();?>"
+                                                <a href="<?php echo get_term_link($parent_category); ?>"
+                                                    class="preview">Preview</a>
+                                                <form action="" method="post">
+                                                    <input type="hidden" name="term_id"
+                                                        value="<?php echo $parent_category->term_id; ?>">
+                                                    <input class="delete" type="submit" name="delete_term"
+                                                        value="Delete"
+                                                        onclick="return confirm('Are you sure you wanna delete this?')">
+                                                </form>
+                                                <a href="<?php echo site_url('/edit-collection'); ?>?term=<?php echo $parent_category->term_id; ?>"
                                                     class="edit">Edit</a>
                                             </div>
                                         </td>
                                     </tr>
-
                                     <?php
-
-}
-    ?>
-                                </tbody>
-
-                                <?php
-
 }
 ?>
+                                </tbody>
+
                             </table>
+                            <?php
+
+if (isset($_POST['delete_term'])) {
+    $term_id = intval($_POST['term_id']);
+    $termdelete = wp_delete_term($term_id, 'collection_management');
+    if (!is_wp_error($termdelete)) {
+        // Redirect to desired page
+        wp_redirect(site_url('/collection/'));
+        exit;
+    }
+}
+ob_end_flush();
+?>
+
+                            <!-- <?php
+$args = array(
+    'taxonomy' => 'collection_management',
+    'parent' => 0,
+    'hide_empty' => false,
+);
+$parent_categories = get_terms($args);
+
+foreach ($parent_categories as $parent_category) {
+    echo '<div class="category-item">';
+    echo '<a href="' . get_term_link($parent_category) . '">' . $parent_category->name . '</a>';
+    echo '<a href="' . get_edit_term_link($parent_category->term_id, 'collection_management') . '">Edit</a>';
+    echo '<form action="" method="post">';
+    echo '<input type="hidden" name="term_id" value="' . $parent_category->term_id . '">';
+    echo '<input type="submit" name="delete_term" value="Delete">';
+    echo '</form>';
+    echo '</div>';
+}
+
+if (isset($_POST['delete_term'])) {
+    $term_id = intval($_POST['term_id']);
+    wp_delete_term($term_id, 'collection_management');
+}
+?> -->
+
                         </div>
+
 
                     </div>
                 </div>

@@ -32,7 +32,7 @@ while (have_posts()) {
                                                 Title
                                             </div>
                                             <div class="single-area__row--info">
-                                                <?php the_field('title');?>
+                                                <?php the_title();?>
                                             </div>
                                         </div>
                                         <div class="single-area__row">
@@ -158,61 +158,87 @@ while (have_posts()) {
                                             </div>
                                         </div>
 
-                                        <div class="single-area__row">
-                                            <div class="single-area__row--label">
-                                                Collection
-                                            </div>
-                                            <div class="single-area__row--info">
-                                                <?php the_field('collection');?>
-                                            </div>
-                                        </div>
 
                                         <div class="single-area__row">
                                             <div class="single-area__row--label">
-                                                Sub - Collection
-                                            </div>
-                                            <div class="single-area__row--info">
-                                                <?php the_field('item_sub_collection');?>
-                                            </div>
-                                        </div>
-
-                                        <div class="single-area__row">
-                                            <div class="single-area__row--label">
-                                                Files
+                                                Level
                                             </div>
                                             <div class="single-area__row--info">
                                                 <?php
-if (have_rows('file')):
-        while (have_rows('file')): the_row();
-            $sub_value = get_sub_field('add_new_files');?>
-                                                <ul class="document-menu">
-                                                    <li class="document-list">
-                                                        <a href="<?php echo $sub_value['url']; ?>" target="_blank"
-                                                            class="document-link"><?php echo $sub_value['title']; ?>
-                                                        </a>
-                                                    </li>
-                                                </ul>
-                                                <?php if ($sub_value): ?>
-                                                <?php endif;?>
-                                                <?php
-endwhile;
-    else:
-    endif;
+$level = get_field_object('level');
+    $value = $level['value'];
+    $label = $level['choices'][$value];
     ?>
+                                                <?php echo esc_html($label); ?></span>
+
                                             </div>
                                         </div>
 
+                                        <div class="single-area__row">
+                                            <div class="single-area__row--label">
+                                                File
+                                            </div>
+                                            <div class="single-area__row--info">
+                                                <?php
+if (have_rows('file_content')) {
+        while (have_rows('file_content')) {
+            the_row();
+            $file = get_sub_field('add_new_files');
+            ?>
+                                                <div>
+                                                    <a
+                                                        href="<?php echo $file['url']; ?>"><?php echo $file['title']; ?></a>
+                                                </div>
+                                                <?php
+}
+    }
+    ?>
+                                                <?php
+$file_limit = get_field('file_content_limit');
+    if ($file_limit): ?>
+                                                <a
+                                                    href="<?php echo $file_limit['url']; ?>"><?php echo $file_limit['title']; ?></a>
+                                                <?php endif;?>
 
+                                            </div>
+                                        </div>
+
+                                        <div class="single-area__row">
+                                            <div class="single-area__row--label">
+                                                Collection Management
+                                            </div>
+                                            <div class="single-area__row--info">
+                                                <?php
+$term = get_field('choose_category');
+    if ($term): ?>
+                                                <?php
+$term_id = $term->term_id;
+    ?>
+                                                <?php
+$taxonomy = 'collection_management'; // replace with your taxonomy name
+    $separator = ' &rarr; ';
+
+    $term = get_term($term_id, $taxonomy);
+    $parents = get_term_parents_list($term_id, $taxonomy, array('separator' => $separator, 'link' => false, 'format' => 'name'));
+    // remove the separator and the last character from the string
+    $parents = substr($parents, 0, strrpos($parents, $separator));
+    echo $parents;
+    ?>
+
+                                                <?php endif;?>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <?php }?>
                     </div>
+                    <?php }?>
                 </div>
-                <?php include get_theme_file_path('partials/footer.php');?>
             </div>
+            <?php include get_theme_file_path('partials/footer.php');?>
         </div>
+    </div>
     </div>
 </section>
 

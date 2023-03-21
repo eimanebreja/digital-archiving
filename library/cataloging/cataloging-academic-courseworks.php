@@ -42,7 +42,7 @@ $arg_academic_courseworks_query = new WP_Query($arg_academic_courseworks);
                         <div class="catalog">
                             <div class="catalog__img">
                                 <?php
-$image = get_field('ac_cover_image');
+$image = get_field('cover_image');
     if (!empty($image)): ?>
                                 <img src="<?php echo esc_url($image['url']); ?>"
                                     alt="<?php echo esc_attr($image['alt']); ?>" />

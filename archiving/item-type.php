@@ -59,7 +59,8 @@ $item_type_query = new WP_Query($arg_item_type);
                                     <tr>
                                         <td> <?php the_title();?></td>
                                         <td> <?php echo wp_trim_words(get_the_content(), 12, '...'); ?></td>
-                                        <td> <?php
+                                        <td>
+                                            <?php
 $item_type_title = get_the_title();
     $arg_item = array(
         'post_type' => 'item',

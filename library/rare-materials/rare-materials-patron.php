@@ -50,7 +50,7 @@ $image = get_field('p_profile_picture');
                             </div>
                             <div class="catalog__info">
                                 <h3 class="catalog__info--title">
-                                    <?php echo get_field("name") ?>
+                                    <?php the_title();?>
                                 </h3>
                                 <p class="catalog__info--desc">
                                     <?php echo get_field("p_id_number") ?>

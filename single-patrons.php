@@ -37,7 +37,7 @@ $image = get_field('p_profile_picture');
                                             Name
                                         </div>
                                         <div class="single-audio__information--info">
-                                            <?php echo get_field("name") ?>
+                                            <?php the_title();?>
                                         </div>
                                     </div>
                                     <div class="single-audio__information--row">

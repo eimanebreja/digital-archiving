@@ -20,7 +20,7 @@ $arg_booksmanuscript = array(
 );
 $arg_manuscript_query = new WP_Query($arg_booksmanuscript);
 ?>
-        <table id="table_booksandmanuscripts" class="display">
+        <table id="table_booksandmanuscripts" class="display nowrap">
             <thead>
                 <tr>
                     <th>Counter</th>
@@ -38,7 +38,7 @@ $arg_manuscript_query = new WP_Query($arg_booksmanuscript);
                         <div class="catalog">
                             <div class="catalog__img">
                                 <?php
-$image = get_field('bm_cover_image');
+$image = get_field('cover_image');
     if (!empty($image)): ?>
                                 <img src="<?php echo esc_url($image['url']); ?>"
                                     alt="<?php echo esc_attr($image['alt']); ?>" />

@@ -52,11 +52,7 @@ wp_loginout(home_url()); // Display "Log Out" link.
                     <?php
 }
 ?>
-                    <div class="login__form--google">
-                        <button>
-                            Or Sign in with Google
-                        </button>
-                    </div>
+
 
                     <?php $login = (isset($_GET['login'])) ? $_GET['login'] : 0;?>
                     <?php
@@ -73,9 +69,8 @@ if ($login === "failed") {
             </div>
             <div class="login__fv">
                 <div class="login__fv--img">
-                    <img src="<?php echo THEME_DIR; ?>/assets/img/fv_banner.png" alt="NHCP Logo Banner">
+                    <!-- <img src="<?php echo THEME_DIR; ?>/assets/img/fv_banner.png" alt="NHCP Logo Banner"> -->
                 </div>
-
             </div>
         </div>
     </div>

@@ -1,0 +1,155 @@
+.contact-form {
+  ::-webkit-input-placeholder {
+    /* Edge */
+    color: #b9b9b9;
+  }
+
+  :-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
+    color: #b9b9b9;
+  }
+
+  ::placeholder {
+    color: #b9b9b9;
+  }
+  .contact-input {
+    input {
+      width: 100%;
+      height: 65px;
+      padding-left: 20px;
+      padding-right: 20px;
+      font-size: 16px;
+      border: none;
+      outline: none;
+      background-color: #f2f2f2;
+      border-radius: 12px;
+      color: $black;
+    }
+  }
+  .contact-textarea {
+    textarea {
+      width: 100%;
+      height: 250px;
+      padding-top: 20px;
+      padding-bottom: 20px;
+      padding-left: 20px;
+      padding-right: 20px;
+      font-size: 16px;
+      border: none;
+      outline: none;
+      background-color: #f2f2f2;
+      border-radius: 12px;
+      color: $black;
+    }
+  }
+  .contact-btn {
+    max-width: 239px;
+
+    input {
+      width: 100%;
+      height: 50px;
+      color: $white;
+      font-family: $f-bold;
+      background: $blue;
+      border: none;
+      outline: none;
+      border-radius: 100px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: 0.3s;
+      &:hover {
+        transition: 0.3s;
+        opacity: 0.8;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 1200px) and (max-width: 1450px) {
+  .contact-form {
+    .contact-input {
+      input {
+        height: 52px;
+      }
+    }
+    .contact-textarea {
+      textarea {
+        height: 220px;
+      }
+    }
+    .contact-btn {
+      max-width: 180px;
+
+      input {
+        height: 42px;
+      }
+    }
+  }
+}
+@media only screen and (min-width: 1024px) and (max-width: 1199px) {
+  .contact-form {
+    .contact-input {
+      input {
+        height: 52px;
+      }
+    }
+    .contact-textarea {
+      textarea {
+        height: 220px;
+      }
+    }
+    .contact-btn {
+      max-width: 180px;
+
+      input {
+        height: 42px;
+      }
+    }
+  }
+}
+@media only screen and (min-width: 750px) and (max-width: 1023px) {
+  .contact-form {
+    .contact-input {
+      input {
+        height: 52px;
+      }
+    }
+    .contact-textarea {
+      textarea {
+        height: 220px;
+      }
+    }
+    .contact-btn {
+      max-width: 180px;
+
+      input {
+        height: 42px;
+      }
+    }
+  }
+}
+@media screen and (max-width: 749px) {
+  .contact-form {
+    .contact-input {
+      input {
+        height: 48px;
+        font-size: 14px;
+      }
+    }
+    .contact-textarea {
+      textarea {
+        height: 220px;
+        font-size: 14px;
+      }
+    }
+    .contact-btn {
+      max-width: 180px;
+
+      input {
+        height: 42px;
+        font-size: 14px;
+      }
+    }
+  }
+}
